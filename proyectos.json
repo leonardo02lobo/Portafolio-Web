@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Proyecto 1",
+        "descripcion": "Descripción del Proyecto 1",
+        "imagen": "media/Blazor.png"
+    },
+    {
+        "nombre": "Proyecto 2",
+        "descripcion": "Descripción del Proyecto 2",
+        "imagen": "https://play-lh.googleusercontent.com/4RqG3k2Ouy4WXJAptapdG_AnOGXopn7XCVuiwIAeTBTfVHo3_KXCAdSzzQdCMB_Fzts7"
+    },
+    {
+        "nombre": "Proyecto 3",
+        "descripcion": "Descripción del Proyecto 3",
+        "imagen": "https://play-lh.googleusercontent.com/4RqG3k2Ouy4WXJAptapdG_AnOGXopn7XCVuiwIAeTBTfVHo3_KXCAdSzzQdCMB_Fzts7"
+    },
+    {
+        "nombre": "Proyecto 4",
+        "descripcion": "Descripción del Proyecto 4",
+        "imagen": "https://play-lh.googleusercontent.com/4RqG3k2Ouy4WXJAptapdG_AnOGXopn7XCVuiwIAeTBTfVHo3_KXCAdSzzQdCMB_Fzts7"
+    }
+]

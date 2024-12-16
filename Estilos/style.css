@@ -1,0 +1,263 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.89);
+    font-family: Roboto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    z-index: 100;
+    font-size: 30px;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    a {
+        text-decoration: none;
+        color: white;
+
+    }
+}
+
+p {
+    display: inline-block;
+    padding-left: 2px;
+}
+
+.text {
+    color: white;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.text-llaves {
+    color: aqua;
+    font-size: 40px;
+}
+
+li {
+    display: inline-block;
+    color: white;
+    padding: 0 40px 0 0;
+}
+
+.presentation {
+    padding: 120px 80px;
+    font-size: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-llaves-presentation {
+    color: rgba(135, 231, 131, 0.842);
+    text-shadow:
+        0 0 10px rgba(135, 231, 131, 0.5),
+        0 0 20px rgba(135, 231, 131, 0.5),
+        0 0 30px rgba(135, 231, 131, 0.5);
+}
+
+.text-presentation {
+    padding-left: 50px;
+    color: rgba(109, 138, 233, 0.842);
+    text-shadow:
+        0 0 10px rgba(109, 138, 233, 0.5),
+        0 0 20px rgba(109, 138, 233, 0.5),
+        0 0 30px rgba(109, 138, 233, 0.5);
+}
+
+.text-presentation-article {
+    padding-left: 50px;
+    color: rgba(147, 98, 226, 0.842);
+    text-shadow:
+        0 0 10px rgba(147, 98, 226, 0.5),
+        0 0 20px rgba(147, 98, 226, 0.5),
+        0 0 30px rgba(147, 98, 226, 0.5);
+}
+
+.span-presentation {
+    padding-left: 50px;
+    font-size: 20px;
+    color: rgba(236, 170, 140, 0.842);
+    text-shadow:
+        0 0 10px rgba(236, 170, 140, 0.5),
+        0 0 20px rgba(236, 170, 140, 0.5),
+        0 0 30px rgba(236, 170, 140, 0.5);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+h4 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.github,
+.linkedin,
+.curriculum {
+    display: inline-block;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 12px 34px;
+    font-size: 20px;
+    margin-right: 20px;
+
+    .contenedor-datos {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        background-color: white;
+    }
+
+    p {
+        background-color: white;
+        color: black;
+        margin-top: 5px;
+    }
+
+    img {
+        background-color: white;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    transition: 0.5s all;
+}
+
+.linkedin,
+.curriculum {
+    background-color: black;
+    border: 2px solid rgb(190, 186, 186);
+}
+
+.linkedin .contenedor-datos,
+.curriculum .contenedor-datos,
+.linkedin p,
+.curriculum p,
+.linkedin img,
+.curriculum img {
+    background-color: black;
+}
+
+.linkedin p,
+.curriculum p {
+    color: white;
+}
+
+.curriculum img {
+    filter: brightness(0.7);
+    background-color: rgba(255, 255, 255, 0.575);
+
+}
+
+.github p,
+.github img,
+.github .contenedor-datos,
+.linkedin p,
+.linkedin img,
+.linkedin .contenedor-datos,
+.curriculum p,
+.curriculum img,
+.curriculum .contenedor-datos {
+    transition: 0.5s all;
+}
+
+
+.github:hover,
+.linkedin:hover,
+.curriculum:hover {
+    background-color: aquamarine;
+}
+
+.github:hover p,
+.github:hover img,
+.github:hover .contenedor-datos,
+.linkedin:hover p,
+.linkedin:hover img,
+.linkedin:hover .contenedor-datos,
+.curriculum:hover p,
+.curriculum:hover img,
+.curriculum:hover .contenedor-datos {
+    filter: brightness(1);
+    background-color: aquamarine;
+}
+
+#QuienSoy,
+#Lenguajes,
+#Proyectos {
+    width: 100%;
+}
+
+.name,
+.description {
+    color: white;
+}
+.description{
+    font-size: 20px;
+}
+
+.name {
+    padding-bottom: 30px;
+}
+#QuienSoy{
+    display: flex;
+    margin: auto;
+}
+.ImagePersonal{
+    width: 30%;
+    height: 30%;
+    margin: auto;
+}
+
+.personal {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+#proyectos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyecto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 30px 0 30px 0;
+    padding: 20px;
+}
+.title-project,
+.description-project{
+    color: white;
+}
+
+.Image-project{
+    width: 400px;
+
+}
+
