@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.89);
+    background-color: rgba(0, 0, 0, 0.90 );
     font-family: Roboto;
 }
 
@@ -211,18 +211,21 @@ h4 {
 .description {
     color: white;
 }
-.description{
+
+.description {
     font-size: 20px;
 }
 
 .name {
     padding-bottom: 30px;
 }
-#QuienSoy{
+
+#QuienSoy {
     display: flex;
     margin: auto;
 }
-.ImagePersonal{
+
+.ImagePersonal {
     width: 30%;
     height: 30%;
     margin: auto;
@@ -234,14 +237,14 @@ h4 {
     padding: 30px;
 }
 
-#proyectos{
+#proyectos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.proyecto{
+.proyecto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -251,13 +254,32 @@ h4 {
     margin: 30px 0 30px 0;
     padding: 20px;
 }
+
 .title-project,
-.description-project{
+.description-project {
     color: white;
 }
 
-.Image-project{
+.Image-project {
     width: 400px;
 
 }
 
+.languages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    img {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+    }
+}
+
+h1{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}   

@@ -19,7 +19,7 @@ function mostrarProyectos(proyectos) {
     elemento.innerHTML = ''; // Limpiar el contenido previo
 
     // Crear una variable para almacenar el HTML
-    let html = '';
+    let html = '<h1>Proyectos Realizados</h1>';
 
     proyectos.forEach(proyecto => {
         html += `
