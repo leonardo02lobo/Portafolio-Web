@@ -27,6 +27,7 @@ function mostrarProyectos(proyectos) {
                 <img src="${proyecto.imagen}" alt="${proyecto.nombre}" class="Image-project">
                 <h1 class="title-project">${proyecto.nombre}</h1>
                 <p class="description-project">${proyecto.descripcion}</p>
+                <a class="button-project" href="${proyecto.url}" target="_black">Github</a>
             </div>
         `;
     });

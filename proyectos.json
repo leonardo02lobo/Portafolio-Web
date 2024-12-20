@@ -1,22 +1,20 @@
 [
     {
-        "nombre": "Proyecto 1",
-        "descripcion": "Descripción del Proyecto 1",
-        "imagen": "media/Blazor.png"
+        "nombre": "Proyecto-Final-Java-Programacion-1",
+        "descripcion": "pequeño proyecto realizado en java que simula el juego Space Invader",
+        "imagen": "https://i.postimg.cc/m2MsDCdm/Screenshot-2024-10-17-193732.png",
+        "url": "https://github.com/leonardo02lobo/Proyecto-Final-Java-Programacion-1"
     },
     {
-        "nombre": "Proyecto 2",
-        "descripcion": "Descripción del Proyecto 2",
-        "imagen": "https://play-lh.googleusercontent.com/4RqG3k2Ouy4WXJAptapdG_AnOGXopn7XCVuiwIAeTBTfVHo3_KXCAdSzzQdCMB_Fzts7"
+        "nombre": "Juego-Mecanografia",
+        "descripcion": "Este juego desarrollado con blazor y C#, consiste en escribir la mayor cantidad de palabras en 5 minutos.",
+        "imagen": "//static.typingclub.com/m/corp2/lessonplan-icons/typing1.png",
+        "url": "https://github.com/leonardo02lobo/Juego-Mecanografia"
     },
     {
-        "nombre": "Proyecto 3",
-        "descripcion": "Descripción del Proyecto 3",
-        "imagen": "https://play-lh.googleusercontent.com/4RqG3k2Ouy4WXJAptapdG_AnOGXopn7XCVuiwIAeTBTfVHo3_KXCAdSzzQdCMB_Fzts7"
-    },
-    {
-        "nombre": "Proyecto 4",
-        "descripcion": "Descripción del Proyecto 4",
-        "imagen": "https://play-lh.googleusercontent.com/4RqG3k2Ouy4WXJAptapdG_AnOGXopn7XCVuiwIAeTBTfVHo3_KXCAdSzzQdCMB_Fzts7"
+        "nombre": "Obtener-Indice-Academico-En-La-Web",
+        "descripcion": "este pequeño proyecto esta desarrollo con C# y utilizando el framework de blazor, utilizando una base de datos MySql para almacenar las notas y los usuarios, esta aplicacion esta desarrolllada para ayudar a los estudiantes a conocer cual sera su indice para el proximo semestre",
+        "imagen": "https://i.postimg.cc/yYVyQKPr/Screenshot-2024-10-19-080237.png",
+        "url": "https://github.com/leonardo02lobo/Obtener-Indice-Academico-En-La-Web"
     }
 ]
