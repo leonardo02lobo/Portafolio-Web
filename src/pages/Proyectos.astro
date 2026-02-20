@@ -1,0 +1,95 @@
+---
+import AstroWeb from "../components/icons/AstroWeb.astro";
+import Java from "../components/icons/Java.astro";
+import JavaScript from "../components/icons/JavaScript.astro";
+import NET from "../components/icons/NET.astro";
+import TypeScript from "../components/icons/TypeScript.astro";
+import Tarjeta from "../components/Tarjeta.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <div class="container mx-auto px-4 md:px-8 lg:px-12 py-8">
+        <h1 class="text-3xl md:text-5xl lg:text-6xl text-center mb-8 md:mb-12 font-bold text-blue-400">Proyectos Realizados</h1>
+        <p class="text-center text-sm md:text-base lg:text-lg text-gray-300 mb-12 md:mb-16 max-w-3xl mx-auto">
+            Aquí puedes ver algunos de los proyectos que he desarrollado a lo largo de mi carrera, utilizando diferentes tecnologías y lenguajes de programación.
+        </p>
+        
+        <!-- Sección Java -->
+        <section id="Java" class="mb-12 md:mb-16">
+            <h2 class="flex flex-row items-center gap-4 text-xl md:text-2xl lg:text-3xl p-4 mb-6">
+                <Java class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" /> Java
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                <Tarjeta
+                    title="Clon de Space Invaders en Java"
+                    description="Un clon del clásico juego Space Invaders, desarrollado en Java con una interfaz gráfica simple y aplicando Hilos para la lógica del juego."
+                    imageUrl="https://i.postimg.cc/m2MsDCdm/Screenshot-2024-10-17-193732.png"
+                    url="https://github.com/leonardo02lobo/Space-Invader-Clon-in-Java"
+                />
+            </div>
+        </section>
+
+        <!-- Sección Astro -->
+        <section id="Astro" class="mb-12 md:mb-16">
+            <h2 class="flex flex-row items-center gap-4 text-xl md:text-2xl lg:text-3xl p-4 mb-6">
+                <AstroWeb class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" /> Astro
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                <Tarjeta
+                    title="Pagina de la Hello World Cup"
+                    description="Una pagina web que muestra los equipos de la Hello World Cup, desarrollada con Astro y Tailwind CSS. Desarrollada en conjunto con @21harley"
+                    imageUrl="https://i.postimg.cc/fWvJ3kyW/Captura-desde-2025-07-30-17-40-59.png"
+                    url="none"
+                />
+                <Tarjeta
+                    title="ProConnect"
+                    description="Una red social para desarrolladores, creada con Astro, Tailwind CSS, JavaScript y TypeScript. Con Backend en Node.js y Express, y base de datos MySQL."
+                    imageUrl="https://i.postimg.cc/Jhypn9Qm/Captura-desde-2025-07-30-17-51-49.png"
+                    url="https://github.com/leonardo02lobo/ProConnect"
+                />
+            </div>
+        </section>
+
+        <!-- Sección JavaScript -->
+        <section id="JavaScript" class="mb-12 md:mb-16">
+            <h2 class="flex flex-row items-center gap-4 text-xl md:text-2xl lg:text-3xl p-4 mb-6">
+                <JavaScript class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" /> JavaScript
+            </h2>
+            <div class="grid grid-cols-1 gap-4 md:gap-6">
+                <div class="bg-gray-800 rounded-lg p-6 md:p-8 text-center border-2 border-blue-700">
+                    <p class="text-lg md:text-2xl lg:text-4xl font-bold text-blue-400">Próximamente proyectos individuales en JavaScript</p>
+                    <p class="text-gray-300 mt-4 text-sm md:text-base">Actualmente, mis proyectos en JavaScript están integrados en otros frameworks como Astro.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección TypeScript -->
+        <section id="TypeScript" class="mb-12 md:mb-16">
+            <h2 class="flex flex-row items-center gap-4 text-xl md:text-2xl lg:text-3xl p-4 mb-6">
+                <TypeScript class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" /> TypeScript
+            </h2>
+            <div class="grid grid-cols-1 gap-4 md:gap-6">
+                <div class="bg-gray-800 rounded-lg p-6 md:p-8 text-center border-2 border-blue-700">
+                    <p class="text-lg md:text-2xl lg:text-4xl font-bold text-blue-400">Próximamente proyectos individuales en TypeScript</p>
+                    <p class="text-gray-300 mt-4 text-sm md:text-base">Actualmente, mis proyectos en TypeScript están integrados en otros frameworks como Astro.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección C# -->
+        <section id="CSharp" class="mb-12 md:mb-16">
+            <h2 class="flex flex-row items-center gap-4 text-xl md:text-2xl lg:text-3xl p-4 mb-6">
+                <NET class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" /> C#
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                <Tarjeta
+                    title="12 meses, 12 programas"
+                    description="Un proyecto que consiste en desarrollar un programa diferente cada mes durante un año, utilizando C# y .NET. Cada programa tiene un enfoque distinto, desde APIS hasta aplicaciones web."
+                    imageUrl="https://i.postimg.cc/wj56rGNq/Captura-desde-2025-07-30-17-58-42.png"
+                    url="https://github.com/leonardo02lobo/12-meses-12-programas"
+                />
+            </div>
+        </section>
+    </div>
+</Layout>

@@ -1,49 +1,38 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import AstroWeb from "../components/icons/AstroWeb.astro";
+import Java from "../components/icons/Java.astro";
+import JavaScript from "../components/icons/JavaScript.astro";
+import NET from "../components/icons/NET.astro";
+import Tailwind from "../components/icons/Tailwind.astro";
+import TypeScript from "../components/icons/TypeScript.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
+<Layout>
+	<main class="grid grid-cols-1 md:grid-cols-2 min-h-screen">
+		<div class="flex flex-col justify-center items-start p-4 md:p-8 lg:p-16 bg-black">
+			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Soy Leonardo Lobo</h1>
+			<p class="text-lg md:text-xl lg:text-2xl mb-8 border-2 bg-white border-blue-500 text-black font-bold p-2">
+				Estudiante de Ingenieria En Informatica
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+		</div>
+		<div class="flex flex-col justify-center items-center p-4 md:p-8 lg:p-16 bg-blue-500 relative">
+			<span class="text-black font-bold text-sm md:text-base lg:text-lg mb-4">
+				Mi experiencia
+			</span>
+			<div class="flex flex-wrap justify-center gap-4 mb-8">
+				<a href="/Proyectos/#Java"><Java /></a>
+				<a href="/Proyectos/#Astro"><AstroWeb /></a>
+				<a href="/Proyectos/#Astro"><Tailwind /></a>
+				<a href="/Proyectos/#JavaScript"><JavaScript /></a>
+				<a href="/Proyectos/#TypeScript"><TypeScript /></a>
+				<a href="/Proyectos/#CSharp"><NET /></a>
+			</div>
+			<img
+				src="/perfil.jpeg"
+				class="rounded-full w-32 md:w-48 lg:w-64"
+				alt=""
+			/>
+		</div>
+	</main>
+</Layout>
