@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* 
 ::view-transition-old(root) {
   animation: 500ms cubic-bezier(0.4, 0, 0.2, 1) both slide-out-to-left;
 }
@@ -24,4 +24,4 @@
   to {
     transform: translateX(-100%);
   }
-}
+} */
