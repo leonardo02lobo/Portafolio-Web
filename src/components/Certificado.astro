@@ -8,6 +8,6 @@ const { imagen, plataforma }: Props = Astro.props;
 ---
 
 <div class="flex flex-col items-center p-3 md:p-4 border-2 border-blue-700 rounded-lg shadow-md gap-3 md:gap-4 bg-gray-900 hover:bg-blue-900 hover:scale-105 transition-all duration-300 hover:shadow-xl">
-    <img src={imagen} alt={`Certificación de ${plataforma}`} class="w-full h-24 md:h-28 lg:h-32 object-contain rounded" />
+    <img src={imagen} alt={`Certificación de ${plataforma}`} class="w-full h-32 md:h-36 lg:h-72 object-contain rounded" />
     <h3 class="text-base md:text-lg lg:text-xl font-bold text-center">{plataforma}</h3>
 </div>

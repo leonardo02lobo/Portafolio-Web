@@ -1,5 +1,33 @@
 [
     {
+        "imagen": "/InglesA1VerboToBe.png",
+        "plataforma": "Platzi"
+    },
+    {
+        "imagen": "/InglesBasicoA1ParaPrincipiantes.png",
+        "plataforma": "Platzi"
+    },
+    {
+        "imagen": "/PythonOrientadObjectos.png",
+        "plataforma": "Platzi"
+    },
+    {
+        "imagen": "/EstrategiasParaAprenderInglesEnLinea.png",
+        "plataforma": "Platzi"
+    },
+    {
+        "imagen": "/PythonIntermedioParaEntornosVirtuales.png",
+        "plataforma": "Platzi"
+    },
+    {
+        "imagen": "/fundamentosDePython.png",
+        "plataforma": "Platzi"
+    },
+    {
+        "imagen": "/strategiesToLearnEnglishOnline.png",
+        "plataforma": "Platzi"
+    },
+    {
         "imagen": "/programacionBasica.png",
         "plataforma": "Platzi"
     }
