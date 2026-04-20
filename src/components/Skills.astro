@@ -1,0 +1,47 @@
+---
+import CardSkills from "./CardSkills.astro";
+import Java from "./icons/Java.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import Python from "./icons/Python.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import TypeScript from "./icons/TypeScript.astro";
+---
+
+<section class="bg-background py-10 sm:py-14 lg:py-16 flex justify-center items-center flex-col w-full px-4 sm:px-8 lg:px-12">
+    <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 text-text text-center leading-tight">
+        //_MI ENFOQUE TÉCNICO & HABILIDADES_
+    </h2>
+    <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
+        <CardSkills
+            title="Python"
+            description="Experiencia en el desarrollo de aplicaciones y scripts utilizando Python para diversas tareas, desde automatización hasta análisis de datos."
+        >
+            <Python class="w-16 h-16" />
+        </CardSkills>
+        <CardSkills
+            title="Java"
+            description="Conocimiento en la programación orientada a objetos y desarrollo de aplicaciones utilizando Java."
+        >
+            <Java class="w-16 h-16" />
+        </CardSkills>
+        <CardSkills
+            title="JavaScript && TypeScript"
+            description="Conocimiento en la programación de interactividad y funcionalidades dinámicas con JavaScript y TypeScript."
+        >
+            <div class="flex items-center -space-x-4 sm:-space-x-5">
+                <span>
+                    <JavaScript class="w-16 h-16" />
+                </span>
+                <span>
+                    <TypeScript class="w-16 h-16" />
+                </span>
+            </div>
+        </CardSkills>
+        <CardSkills
+            title="Tailwind CSS"
+            description="Experiencia en el desarrollo de aplicaciones web utilizando Tailwind CSS para crear interfaces modernas y responsivas."
+        >
+            <Tailwind class="w-16 h-16" />
+        </CardSkills>
+    </div>
+</section>

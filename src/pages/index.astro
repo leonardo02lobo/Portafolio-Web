@@ -1,40 +1,10 @@
 ---
-import AstroWeb from "../components/icons/AstroWeb.astro";
-import Java from "../components/icons/Java.astro";
-import JavaScript from "../components/icons/JavaScript.astro";
-import NET from "../components/icons/NET.astro";
-import Python from "../components/icons/Python.astro";
-import Tailwind from "../components/icons/Tailwind.astro";
-import TypeScript from "../components/icons/TypeScript.astro";
+import Hero from "../components/Hero.astro";
+import Skills from "../components/Skills.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<main class="grid grid-cols-1 md:grid-cols-2 min-h-screen">
-		<div class="flex flex-col justify-center items-start p-4 md:p-8 lg:p-16 bg-black">
-			<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Soy Leonardo Lobo</h1>
-			<p class="text-lg md:text-xl lg:text-2xl mb-8 border-2 bg-white border-blue-500 text-black font-bold p-2">
-				Estudiante de Ingenieria En Informatica
-			</p>
-		</div>
-		<div class="flex flex-col justify-center items-center p-4 md:p-8 lg:p-16 bg-blue-500 relative">
-			<span class="text-black font-bold text-sm md:text-base lg:text-lg mb-4">
-				Mi experiencia
-			</span>
-			<div class="flex flex-wrap justify-center gap-4 mb-8">
-				<a href="/Proyectos/#Java"><Java /></a>
-				<a href="/Proyectos/#Astro"><AstroWeb /></a>
-				<a href="/Proyectos/#Astro"><Tailwind /></a>
-				<a href="/Proyectos/#JavaScript"><JavaScript /></a>
-				<a href="/Proyectos/#TypeScript"><TypeScript /></a>
-				<a href="/Proyectos/#CSharp"><NET /></a>
-				<a href="/Proyectos/#Python"><Python /></a>
-			</div>
-			<img
-				src="/perfil.jpeg"
-				class="rounded-full w-32 md:w-48 lg:w-64"
-				alt=""
-			/>
-		</div>
-	</main>
+	<Hero/>
+	<Skills/>
 </Layout>

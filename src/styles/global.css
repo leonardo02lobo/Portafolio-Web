@@ -1,27 +1,41 @@
 @import "tailwindcss";
-/* 
-::view-transition-old(root) {
-  animation: 500ms cubic-bezier(0.4, 0, 0.2, 1) both slide-out-to-left;
+
+@theme {
+    --color-navbar: #0f1216;
+    --color-cyan-button: #00D2D2;
+    --color-background: #161B22;
+    --color-text: #F2A01F;
 }
 
-::view-transition-new(root) {
-  animation: 500ms cubic-bezier(0.4, 0, 0.2, 1) both slide-in-from-right;
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-@keyframes slide-in-from-right {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+#hero {
+    position: relative;
+    isolation: isolate;
+    background-image: url('/src/assets/fondo_Hero.png');
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
 
-@keyframes slide-out-to-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-} */
+#hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.57);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#hero > * {
+    position: relative;
+    z-index: 1;
+}

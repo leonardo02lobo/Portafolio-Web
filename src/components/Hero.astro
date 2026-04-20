@@ -1,0 +1,48 @@
+---
+import ButtonPrimary from "./ButtonPrimary.astro";
+import Footer from "./Footer.astro";
+import Header from "./Header.astro";
+---
+
+<main id="hero" class="flex flex-col justify-between min-h-screen w-full">
+    <Header />
+    <section class="flex-grow flex flex-col lg:flex-row items-center justify-between gap-10 px-4 sm:px-8 lg:px-20 py-8 lg:py-0">
+        <div class="flex w-full lg:w-1/2 flex-col text-white justify-center items-start gap-6">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Leonardo Lobo</h1>
+            <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold">
+                ESTUDIANTE DE INGENIERIA EN INFORMATICA (UNET) |
+            </h2>
+            <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold">
+                APASIONADO POR DESARROLLO (Java, Python), CIBERSEGURIDAD Y AI
+            </h2>
+            <p class="text-base sm:text-lg w-full lg:w-3/4">
+                Hola, soy Leonardo. Un desarrollador curioso y estudiante de
+                ingeniería en la UNET, enfocado en crear soluciones tecnológicas
+                impactantes. Mi viaje abarca el robusto ecosistema Java, la
+                agilidad de Python, y la intriga de la Ciberseguridad y la IA,
+                buscando siempre el control total y el aprendizaje continuo en
+                entornos como Kali Linux. ¡Explora mi mundo digital!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 w-full sm:w-auto">
+                <ButtonPrimary
+                text="VER MIS PROYECTOS"
+                href="#"
+                className="bg-cyan-button text-black font-extrabold uppercase px-8 py-3 rounded-tl-2xl rounded-br-2xl text-sm tracking-wide shadow-lg hover:bg-white hover:text-cyan-button transition duration-300 ease-in-out"
+            />
+            <ButtonPrimary
+                text="SOBRE MI"
+                href="#"
+                className="bg-transparent text-white border-2 border-white font-extrabold uppercase px-8 py-3 rounded-tl-2xl rounded-br-2xl text-sm tracking-wide shadow-lg hover:bg-white hover:text-cyan-button transition duration-300 ease-in-out"
+            />
+            </div>
+        </div>
+        <div class="flex justify-center w-full lg:w-1/2">
+            <img
+                src="https://avatars.githubusercontent.com/u/131476039?s=400&u=70018a95282cd9e6bfc6f218d0c2c3364e6bb149&v=4"
+                alt="Profile Picture"
+                class="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto rounded-lg shadow-lg"
+            />
+        </div>
+    </section>
+    <Footer />
+</main>

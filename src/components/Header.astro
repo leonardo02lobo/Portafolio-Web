@@ -1,102 +1,77 @@
----
-import Github from "./icons/Github.astro";
-import LinkedIn from "./icons/LinkedIn.astro";
----
-
-<header class="flex flex-col md:flex-row items-center justify-between p-2 md:p-4 bg-transparent relative">
-    <!-- Logo/Nombre -->
-    <h1 class="font-bold text-xl md:text-2xl lg:text-3xl font-mono w-full md:w-auto text-center md:text-left mb-4 md:mb-0">
-        <a href="/">Leonardo Lobo</a>
-    </h1>
-    
-    <!-- Menú principal - visible en desktop -->
-    <nav class="hidden md:block">
-        <ul class="flex flex-row items-center gap-1 md:gap-2 lg:gap-4">
-            <li><a href="/" class="hover:underline p-2 block">Inicio</a></li>
-            <li><a href="./SobreMi" class="hover:underline p-2 block">Sobre Mi</a></li>
-            <li><a href="./Proyectos" class="hover:underline p-2 block">Proyectos</a></li>
-        </ul>
+<header class="bg-navbar text-white px-16 py-6 flex flex-col justify-center items-start">
+    <nav>
+        <li class="list-none text-xl flex gap-8">
+            <a href="#" class="hover:text-cyan-button transition-colors duration-300">INICIO</a>
+            <a href="#" class="hover:text-cyan-button transition-colors duration-300">SOBRE MI</a>
+            <a href="#" class="hover:text-cyan-button transition-colors duration-300">PROYECTOS</a>
+            <a href="#" class="hover:text-cyan-button transition-colors duration-300">HABILIDADES</a>
+            <a href="#" class="hover:text-cyan-button transition-colors duration-300">CONTACTO</a>
+        </li>
     </nav>
-
-    <!-- Menú hamburguesa para móvil -->
-    <button 
-        id="mobile-menu-toggle"
-        class="md:hidden absolute right-4 top-4 text-2xl"
-        aria-label="Abrir menú"
-        onclick="toggleMobileMenu()"
-    >
-        ☰
-    </button>
-
-    <!-- Menú móvil (oculto por defecto) -->
-    <nav 
-        id="mobile-menu"
-        class="hidden w-full bg-black text-white md:hidden mt-4 py-2 rounded-lg"
-    >
-        <ul class="flex flex-col items-center gap-2">
-            <li><a href="/" class="hover:underline p-2 block w-full text-center">Inicio</a></li>
-            <li><a href="./SobreMi" class="hover:underline p-2 block w-full text-center">Sobre Mi</a></li>
-            <li><a href="./Proyectos" class="hover:underline p-2 block w-full text-center">Proyectos</a></li>
-            <li class="border-t border-gray-600 w-full pt-2 mt-2">
-                <div class="flex justify-center gap-4">
-                    <a href="https://github.com/leonardo02lobo" target="_blank" class="flex items-center gap-2 p-2">
-                        <Github /> Github
-                    </a>
-                    <a href="https://www.linkedin.com/in/leonardo-jose-lobo-candelario-0705b634a/" target="_blank" class="flex items-center gap-2 p-2">
-                        <LinkedIn /> LinkedIn
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Botón "Hablemos" (solo visible en desktop) -->
-    <div class="hidden md:flex flex-row items-center gap-4 relative">
-        <button 
-            id="menu-toggle"
-            class="bg-white text-black text-center p-2 md:p-3 mx-4 cursor-pointer hover:bg-blue-500 hover:text-white transition-colors"
-            aria-expanded="false"
-            aria-controls="dropdown-menu"
-            onclick="toggleDropdownMenu()"
-        >
-            Hablemos
-        </button>
-        <nav 
-            id="dropdown-menu"
-            class="flex flex-col items-center gap-4 absolute bg-white top-12 right-0 p-4 rounded shadow-lg origin-top transition-transform duration-300 scale-y-0"
-            style="min-width: 180px; z-index: 10;"
-        >
-            <li class="list-none"><a class="text-black flex items-center gap-2 cursor-pointer hover:text-blue-500 transition-colors" href="https://github.com/leonardo02lobo" target="_blank"><Github /> Github</a></li>
-            <li class="list-none"><a class="text-black flex items-center gap-2 cursor-pointer hover:text-blue-500 transition-colors" href="https://www.linkedin.com/in/leonardo-jose-lobo-candelario-0705b634a/" target="_blank"><LinkedIn /> LinkedIn</a></li>
-        </nav>
-    </div>
-
-    <script lang="js">
-        // Función para el menú desplegable
-        function toggleDropdownMenu() {
-            const menu = document.getElementById('dropdown-menu');
-            const btn = document.getElementById('menu-toggle');
-            menu.classList.toggle('scale-y-100');
-            menu.classList.toggle('scale-y-0');
-            btn.setAttribute('aria-expanded', menu.classList.contains('scale-y-100'));
-        }
-
-        // Función para el menú móvil
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Cerrar menús al hacer clic fuera
-        document.addEventListener('click', function(event) {
-            const dropdownMenu = document.getElementById('dropdown-menu');
-            const menuToggle = document.getElementById('menu-toggle');
-            
-            if (dropdownMenu && menuToggle && !menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.add('scale-y-0');
-                dropdownMenu.classList.remove('scale-y-100');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-    </script>
 </header>
+<script is:inline>
+    const initMobileMenu = () => {
+        const header = document.querySelector('header');
+        const nav = header?.querySelector('nav');
+        const list = nav?.querySelector('li');
+        if (!header || !nav || !list) return;
+
+        nav.classList.add('w-full', 'md:w-auto');
+        list.classList.add(
+            'hidden',
+            'md:flex',
+            'flex-col',
+            'md:flex-row',
+            'w-full',
+            'md:w-auto',
+            'mt-4',
+            'md:mt-0',
+            'gap-4',
+            'md:gap-8',
+            'text-lg',
+            'md:text-xl'
+        );
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className =
+            'md:hidden inline-flex items-center justify-center p-2 rounded text-white hover:text-cyan-button transition-colors duration-300';
+        button.setAttribute('aria-label', 'Abrir menú');
+        button.setAttribute('aria-expanded', 'false');
+        button.innerHTML = `
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+        `;
+
+        button.addEventListener('click', () => {
+            const isOpen = button.getAttribute('aria-expanded') === 'true';
+            list.classList.toggle('hidden', isOpen);
+            list.classList.toggle('flex', !isOpen);
+            button.setAttribute('aria-expanded', String(!isOpen));
+            button.setAttribute('aria-label', !isOpen ? 'Cerrar menú' : 'Abrir menú');
+        });
+
+        header.insertBefore(button, nav);
+
+        const syncByScreen = () => {
+            if (window.innerWidth >= 768) {
+                list.classList.remove('hidden');
+                list.classList.add('flex');
+                button.setAttribute('aria-expanded', 'false');
+            } else if (button.getAttribute('aria-expanded') === 'false') {
+                list.classList.add('hidden');
+                list.classList.remove('flex');
+            }
+        };
+
+        syncByScreen();
+        window.addEventListener('resize', syncByScreen);
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+</script>

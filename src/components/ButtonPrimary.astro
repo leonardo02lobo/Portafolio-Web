@@ -1,0 +1,15 @@
+---
+interface Props {
+    text: string;
+    href?: string;
+    className: string;
+}
+const { text, href,className } = Astro.props as Props;
+---
+
+<button
+    class=`${className}`
+    onclick={`window.location.href='${href}'`}
+>
+    {text}
+</button>
