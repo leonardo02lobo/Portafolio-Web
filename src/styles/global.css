@@ -5,6 +5,7 @@
     --color-cyan-button: #00D2D2;
     --color-background: #161B22;
     --color-text: #F2A01F;
+    --color-secondary-background: #1A2026;
 }
 
 html,
@@ -14,6 +15,10 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 #hero {

@@ -1,0 +1,52 @@
+---
+import ButtonPrimary from "./ButtonPrimary.astro";
+import CardProject from "./CardProject.astro";
+---
+
+<section
+    class="flex flex-col justify-center items-center bg-background px-20 py-6 gap-6"
+    id="projects"
+>
+    <h2
+        class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 text-white text-center leading-tight"
+    >
+        MIS PROYECTOS DESTACADOS
+    </h2>
+    <div class="grid grid-cols-3 gap-6">
+        <CardProject
+            title="Space Invaders Game"
+            description="Juego de invasores espaciales desarrollado en Java junto a Java Swing. Incluye mecánicas de juego y sistema de puntuación."
+            imageUrl="https://imgs.crazygames.com/games/space-invaders/cover_16x9-1714708168967.png?metadata=none&quality=60&height=2644"
+            projectUrl="https://github.com/leonardo02lobo/Space-Invader-Clon-in-Java"
+            skills={["Java", "Java Swing"]}
+        />
+        <CardProject
+            title="Todo Sobre La UNET"
+            description="Aplicación web para que los estudiantes de la UNET de primeros semestres conozcan todo lo necesario sobre la universidad, desde su historia hasta consejos para sobrevivir el primer semestre."
+            imageUrl="https://www.unet.edu.ve/images/stories/logo_unet_medida.jpg"
+            projectUrl="https://github.com/leonardo02lobo/TodoSobreLaUNET"
+            skills={["Astro", "Tailwind CSS", "TypeScript"]}
+        />
+        <CardProject
+            title="ProConnect"
+            description="Realmente mi proyecto mas ambicioso, una red social para estudiantes universitarios, con el objetivo de conectar a los estudiantes de la UNET y fomentar la colaboración académica y social entre ellos. Ademas de ser un proyecto de aprendizaje, es un proyecto que me apasiona y que espero poder seguir desarrollando en el futuro."
+            imageUrl="https://www.unet.edu.ve/images/stories/logo_unet_medida.jpg"
+            projectUrl="https://github.com/leonardo02lobo/ProConnect"
+            skills={[
+                "Astro",
+                "Tailwind CSS",
+                "TypeScript",
+                "Node.js",
+                "Express",
+                "MySQL",
+                "Spring Boot",
+                "Java",
+            ]}
+        />
+    </div>
+    <ButtonPrimary
+        text="VER TODOS MIS PROYECTOS"
+        href="/projects"
+        className="bg-cyan-button text-black font-extrabold uppercase px-8 py-3 rounded-tl-2xl rounded-br-2xl text-sm tracking-wide shadow-lg hover:bg-white hover:text-cyan-button transition duration-300 ease-in-out"
+    />
+</section>
