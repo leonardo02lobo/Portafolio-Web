@@ -1,3 +1,7 @@
+---
+const { class: className = "w-10 h-10 transition-all duration-300 ease-in-out", ...props } = Astro.props;
+---
+
 <svg
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
@@ -5,7 +9,8 @@
     width="40"
     height="40"
     viewBox="0 0 48 48"
-    class="w-10 hover:w-14 hover:h-14 transition-all duration-300 ease-in-out"
+    class={className}
+    {...props}
 >
     <path
         fill="#0277BD"

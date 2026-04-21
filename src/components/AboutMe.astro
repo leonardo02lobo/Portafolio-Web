@@ -1,0 +1,66 @@
+---
+import RoadMap from "./RoadMap.astro";
+---
+
+<section
+    class="flex flex-col xl:flex-row justify-between items-center gap-8 xl:gap-12 px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-12 bg-background text-white"
+    id="sobremi"
+>
+    <img
+        src="https://avatars.githubusercontent.com/u/131476039?s=400&u=70018a95282cd9e6bfc6f218d0c2c3364e6bb149&v=4"
+        alt="Profile Picture"
+        class="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto rounded-lg shadow-lg"
+    />
+    <div class="flex w-full xl:w-1/2 flex-col gap-4 justify-center items-start">
+        <h2
+            class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold italic leading-tight"
+        >
+            SOBRE MI & TRAYECTORIA
+        </h2>
+        <div class="border-2 border-cyan-button w-20 sm:w-24"></div>
+        <p class="text-sm sm:text-base leading-relaxed">
+            "Mi busqueda es el control total del sistema, donde la
+            ciberseguridad y la IA se unen para crear soluciones robustos y
+            eticas."
+        </p>
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+            <article class="flex flex-col gap-4 items-start w-full">
+                <span
+                    class="block w-full rounded-xl border border-white/10 bg-secondary-background/60 p-4"
+                >
+                    <p>
+                        <strong>Pasón por la Ingeniería en Informatica</strong>
+                    </p>
+                    Pasión por la Ingeniería en Informatica y el desarrollo de software,
+                    con una sólida formación académica y experiencia práctica en proyectos
+                    de desarrollo de software, ciberseguridad e inteligencia artificial.
+                </span>
+                <span
+                    class="block w-full rounded-xl border border-white/10 bg-secondary-background/60 p-4"
+                >
+                    <p><strong>Ecosistemas Java & Python</strong></p>
+                    Manejo en el ecosistema Java, incluyendo Spring Boot para desarrollo
+                    backend y Java Swing para interfaces de usuario, así como experiencia
+                    en Python para scripting y automatización.
+                </span>
+                <span
+                    class="block w-full rounded-xl border border-white/10 bg-secondary-background/60 p-4"
+                >
+                    <p><strong>Ciberseguridad & IA Aplicada</strong></p>
+                    Aprendizaje continuo en ciberseguridad, con conocimientos en Kali
+                    Linux y herramientas de seguridad, y un enfoque en la aplicación
+                    ética de la inteligencia artificial para resolver problemas complejos.
+                </span>
+            </article>
+            <article class="w-full">
+                <h2
+                    class="text-white text-2xl sm:text-3xl font-extrabold tracking-tight uppercase border-b-2 border-tech-cyan pb-2 inline-block self-start"
+                >
+                    Camino hacia el control total
+                </h2>
+
+                <RoadMap />
+            </article>
+        </section>
+    </div>
+</section>

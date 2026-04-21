@@ -4,7 +4,7 @@ import CardProject from "./CardProject.astro";
 ---
 
 <section
-    class="flex flex-col justify-center items-center bg-background px-20 py-6 gap-6"
+    class="flex flex-col justify-center items-center bg-background px-4 sm:px-8 lg:px-12 xl:px-20 py-8 sm:py-10 gap-6"
     id="projects"
 >
     <h2
@@ -12,7 +12,7 @@ import CardProject from "./CardProject.astro";
     >
         MIS PROYECTOS DESTACADOS
     </h2>
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid w-full max-w-7xl grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         <CardProject
             title="Space Invaders Game"
             description="Juego de invasores espaciales desarrollado en Java junto a Java Swing. Incluye mecánicas de juego y sistema de puntuación."
@@ -44,9 +44,9 @@ import CardProject from "./CardProject.astro";
             ]}
         />
     </div>
-    <ButtonPrimary
+    <!-- <ButtonPrimary
         text="VER TODOS MIS PROYECTOS"
         href="/projects"
-        className="bg-cyan-button text-black font-extrabold uppercase px-8 py-3 rounded-tl-2xl rounded-br-2xl text-sm tracking-wide shadow-lg hover:bg-white hover:text-cyan-button transition duration-300 ease-in-out"
-    />
+        className="w-full sm:w-auto bg-cyan-button text-black text-center font-extrabold uppercase px-8 py-3 rounded-tl-2xl rounded-br-2xl text-sm tracking-wide shadow-lg hover:bg-white hover:text-cyan-button transition duration-300 ease-in-out"
+    /> -->
 </section>
