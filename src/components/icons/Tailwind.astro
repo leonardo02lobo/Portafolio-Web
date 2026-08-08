@@ -1,11 +1,17 @@
+---
+interface Props {
+    class?: string;
+}
+
+const { class: className = "h-10 w-10" } = Astro.props as Props;
+---
+
 <svg
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
     y="0px"
-    width="40"
-    height="40"
     viewBox="0 0 48 48"
-    class="w-10 hover:w-14 hover:h-14 transition-all duration-300 ease-in-out"
+    class={className}
 >
     <path
         fill="#00acc1"

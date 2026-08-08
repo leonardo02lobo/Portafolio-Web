@@ -1,43 +1,93 @@
 ---
+import CollaboratorStack from "./CollaboratorStack.astro";
+import RepoMeta from "./RepoMeta.astro";
+import type { Project } from "../lib/github/types";
+
 interface Props {
-    title: string;
-    description: string;
-    imageUrl: string;
-    projectUrl: string;
-    skills: string[];
+    project: Project;
 }
 
-const { title, description, imageUrl, projectUrl, skills } = Astro.props as Props;
+const { project } = Astro.props as Props;
 ---
 
-<article class="flex h-full w-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-6 text-white backdrop-blur-sm transition hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-3">
-    <div class="flex items-center gap-4">
-        <img
-            src={imageUrl}
-            alt={title}
-            class="h-12 w-12 sm:h-14 sm:w-14 rounded-xl object-cover ring-1 ring-white/20"
-        />
-        <h3 class="text-xl sm:text-2xl font-semibold tracking-tight leading-tight">{title}</h3>
+<article
+    class="group flex h-full flex-col gap-4 rounded-md border border-line bg-canvas p-5 transition hover:border-accent/50 hover:shadow-lg hover:shadow-accent/5"
+    data-project
+    data-name={project.name.toLowerCase()}
+    data-description={project.description.toLowerCase()}
+    data-languages={project.languages.join("|").toLowerCase()}
+>
+    <div class="flex items-start gap-3">
+        {
+            project.imageUrl && (
+                <img
+                    src={project.imageUrl}
+                    alt=""
+                    width="40"
+                    height="40"
+                    loading="lazy"
+                    decoding="async"
+                    class="h-10 w-10 shrink-0 rounded border border-line object-cover"
+                />
+            )
+        }
+        <div class="min-w-0">
+            <h3 class="truncate text-base font-bold text-fg sm:text-lg">
+                <span class="text-accent" aria-hidden="true">▸ </span>{project.name}
+            </h3>
+            <p class="truncate text-xs text-dim">{project.fullName}</p>
+        </div>
     </div>
 
-    <p class="mt-4 text-sm leading-relaxed text-white/80">
-        {description}
-    </p>
+    {
+        project.description && (
+            <p class="text-sm leading-relaxed text-fg/80">{project.description}</p>
+        )
+    }
 
-    <ul class="mt-4 flex flex-wrap gap-2">
-        {skills.map((skill) => (
-            <li class="rounded-full border border-white/15 px-3 py-1 text-xs text-white/80">
-                {skill}
-            </li>
-        ))}
-    </ul>
+    <RepoMeta
+        stars={project.stars}
+        forks={project.forks}
+        language={project.primaryLanguage}
+        updatedAt={project.updatedAt}
+    />
 
-    <a
-        href={projectUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-5 inline-flex items-center text-sm font-medium text-cyan-300 transition hover:text-cyan-200"
-    >
-        Ver proyecto →
-    </a>
+    {
+        project.skills.length > 0 && (
+            <ul class="flex flex-wrap gap-2">
+                {project.skills.slice(0, 8).map((skill) => (
+                    <li class="rounded border border-line px-2 py-0.5 text-xs text-accent-2">
+                        --{skill.toLowerCase().replace(/\s+/g, "-")}
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+
+    <CollaboratorStack collaborators={project.collaborators} />
+
+    <div class="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+        <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-medium text-accent transition hover:underline"
+        >
+            <span aria-hidden="true">$</span> ver repo
+            <span class="sr-only">de {project.name} en GitHub</span>
+        </a>
+        {
+            project.homepage && (
+                <a
+                    href={project.homepage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm font-medium text-accent-2 transition hover:underline"
+                >
+                    <span aria-hidden="true">$</span> abrir demo
+                    <span class="sr-only">de {project.name}</span>
+                </a>
+            )
+        }
+    </div>
 </article>

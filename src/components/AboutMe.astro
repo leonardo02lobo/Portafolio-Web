@@ -1,66 +1,74 @@
 ---
 import RoadMap from "./RoadMap.astro";
+import TerminalWindow from "./TerminalWindow.astro";
+
+const bloques = [
+    {
+        titulo: "Pasión por la Ingeniería en Informática",
+        texto: "Formación académica sólida y experiencia práctica en proyectos de desarrollo de software, ciberseguridad e inteligencia artificial.",
+    },
+    {
+        titulo: "Ecosistemas Java & Python",
+        texto: "Manejo del ecosistema Java, incluyendo Spring Boot para backend y Java Swing para interfaces, así como Python para scripting y automatización.",
+    },
+    {
+        titulo: "Ciberseguridad & IA aplicada",
+        texto: "Aprendizaje continuo en ciberseguridad, con conocimientos en Kali Linux y herramientas de seguridad, y un enfoque en la aplicación ética de la IA.",
+    },
+];
 ---
 
-<section
-    class="flex flex-col xl:flex-row justify-between items-center gap-8 xl:gap-12 px-4 sm:px-8 lg:px-12 xl:px-20 py-10 sm:py-12 bg-background text-white"
-    id="sobremi"
->
-    <img
-        src="https://avatars.githubusercontent.com/u/131476039?s=400&u=70018a95282cd9e6bfc6f218d0c2c3364e6bb149&v=4"
-        alt="Profile Picture"
-        class="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto rounded-lg shadow-lg"
-    />
-    <div class="flex w-full xl:w-1/2 flex-col gap-4 justify-center items-start">
-        <h2
-            class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold italic leading-tight"
-        >
-            SOBRE MI & TRAYECTORIA
-        </h2>
-        <div class="border-2 border-cyan-button w-20 sm:w-24"></div>
-        <p class="text-sm sm:text-base leading-relaxed">
-            "Mi busqueda es el control total del sistema, donde la
-            ciberseguridad y la IA se unen para crear soluciones robustos y
-            eticas."
-        </p>
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
-            <article class="flex flex-col gap-4 items-start w-full">
-                <span
-                    class="block w-full rounded-xl border border-white/10 bg-secondary-background/60 p-4"
-                >
-                    <p>
-                        <strong>Pasón por la Ingeniería en Informatica</strong>
-                    </p>
-                    Pasión por la Ingeniería en Informatica y el desarrollo de software,
-                    con una sólida formación académica y experiencia práctica en proyectos
-                    de desarrollo de software, ciberseguridad e inteligencia artificial.
-                </span>
-                <span
-                    class="block w-full rounded-xl border border-white/10 bg-secondary-background/60 p-4"
-                >
-                    <p><strong>Ecosistemas Java & Python</strong></p>
-                    Manejo en el ecosistema Java, incluyendo Spring Boot para desarrollo
-                    backend y Java Swing para interfaces de usuario, así como experiencia
-                    en Python para scripting y automatización.
-                </span>
-                <span
-                    class="block w-full rounded-xl border border-white/10 bg-secondary-background/60 p-4"
-                >
-                    <p><strong>Ciberseguridad & IA Aplicada</strong></p>
-                    Aprendizaje continuo en ciberseguridad, con conocimientos en Kali
-                    Linux y herramientas de seguridad, y un enfoque en la aplicación
-                    ética de la inteligencia artificial para resolver problemas complejos.
-                </span>
-            </article>
-            <article class="w-full">
-                <h2
-                    class="text-white text-2xl sm:text-3xl font-extrabold tracking-tight uppercase border-b-2 border-tech-cyan pb-2 inline-block self-start"
-                >
-                    Camino hacia el control total
-                </h2>
+<div class="bg-canvas px-4 py-12 sm:px-8 lg:px-12 xl:px-20" id="sobremi">
+    <div class="mx-auto max-w-7xl">
+        <TerminalWindow title="~/sobre-mi" command="whoami --full">
+            <div class="flex flex-col gap-8 xl:flex-row xl:gap-12">
+                <div class="flex shrink-0 flex-col gap-4 xl:w-1/4">
+                    <img
+                        src="https://avatars.githubusercontent.com/u/131476039?s=400&u=70018a95282cd9e6bfc6f218d0c2c3364e6bb149&v=4"
+                        alt="Leonardo Lobo"
+                        width="280"
+                        height="280"
+                        loading="lazy"
+                        class="w-full max-w-[220px] rounded-md border border-line xl:max-w-none"
+                    />
+                    <blockquote class="border-l-2 border-accent pl-3 text-sm italic text-fg/80">
+                        "Mi búsqueda es el control total del sistema, donde la ciberseguridad y
+                        la IA se unen para crear soluciones robustas y éticas."
+                    </blockquote>
+                </div>
 
-                <RoadMap />
-            </article>
-        </section>
+                <div class="grid flex-1 grid-cols-1 gap-8 lg:grid-cols-2">
+                    <div>
+                        <h2 class="mb-4 text-xl font-bold text-fg sm:text-2xl">
+                            <span class="text-accent" aria-hidden="true">// </span>Sobre mí
+                        </h2>
+                        <ul class="space-y-4">
+                            {
+                                bloques.map((bloque) => (
+                                    <li class="rounded-md border border-line bg-canvas p-4">
+                                        <h3 class="mb-1.5 text-sm font-bold text-accent-2">
+                                            <span class="text-accent" aria-hidden="true">
+                                                ▸{" "}
+                                            </span>
+                                            {bloque.titulo}
+                                        </h3>
+                                        <p class="text-sm leading-relaxed text-fg/80">
+                                            {bloque.texto}
+                                        </p>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="mb-4 text-xl font-bold text-fg sm:text-2xl">
+                            <span class="text-accent" aria-hidden="true">// </span>Trayectoria
+                        </h2>
+                        <RoadMap />
+                    </div>
+                </div>
+            </div>
+        </TerminalWindow>
     </div>
-</section>
+</div>

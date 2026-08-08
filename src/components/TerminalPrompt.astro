@@ -1,0 +1,19 @@
+---
+interface Props {
+    /** Comando mostrado tras el prompt. */
+    command: string;
+    /** Host mostrado antes del $. */
+    host?: string;
+}
+
+const { command, host = "leonardo@unet:~" } = Astro.props as Props;
+---
+
+<p class="text-sm sm:text-base">
+    <span class="text-dim">{host}</span>
+    <span class="text-accent">$</span>
+    {" "}
+    {/* El texto va completo en el HTML: el script solo lo revela, así que el
+        crawler y el LCP no dependen de la animación. */}
+    <span class="text-fg" data-typewriter>{command}</span>
+</p>

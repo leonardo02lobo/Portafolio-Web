@@ -1,52 +1,43 @@
 ---
-import ButtonPrimary from "./ButtonPrimary.astro";
 import CardProject from "./CardProject.astro";
+import TerminalWindow from "./TerminalWindow.astro";
+import { getProjects } from "../lib/github/projects";
+
+const { projects, source } = await getProjects("featured");
 ---
 
-<section
-    class="flex flex-col justify-center items-center bg-background px-4 sm:px-8 lg:px-12 xl:px-20 py-8 sm:py-10 gap-6"
-    id="projects"
->
-    <h2
-        class="text-2xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8 text-white text-center leading-tight"
-    >
-        MIS PROYECTOS DESTACADOS
-    </h2>
-    <div class="grid w-full max-w-7xl grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        <CardProject
-            title="Space Invaders Game"
-            description="Juego de invasores espaciales desarrollado en Java junto a Java Swing. Incluye mecánicas de juego y sistema de puntuación."
-            imageUrl="https://imgs.crazygames.com/games/space-invaders/cover_16x9-1714708168967.png?metadata=none&quality=60&height=2644"
-            projectUrl="https://github.com/leonardo02lobo/Space-Invader-Clon-in-Java"
-            skills={["Java", "Java Swing"]}
-        />
-        <CardProject
-            title="Todo Sobre La UNET"
-            description="Aplicación web para que los estudiantes de la UNET de primeros semestres conozcan todo lo necesario sobre la universidad, desde su historia hasta consejos para sobrevivir el primer semestre."
-            imageUrl="https://www.unet.edu.ve/images/stories/logo_unet_medida.jpg"
-            projectUrl="https://github.com/leonardo02lobo/TodoSobreLaUNET"
-            skills={["Astro", "Tailwind CSS", "TypeScript"]}
-        />
-        <CardProject
-            title="ProConnect"
-            description="Realmente mi proyecto mas ambicioso, una red social para estudiantes universitarios, con el objetivo de conectar a los estudiantes de la UNET y fomentar la colaboración académica y social entre ellos. Ademas de ser un proyecto de aprendizaje, es un proyecto que me apasiona y que espero poder seguir desarrollando en el futuro."
-            imageUrl="https://www.unet.edu.ve/images/stories/logo_unet_medida.jpg"
-            projectUrl="https://github.com/leonardo02lobo/ProConnect"
-            skills={[
-                "Astro",
-                "Tailwind CSS",
-                "TypeScript",
-                "Node.js",
-                "Express",
-                "MySQL",
-                "Spring Boot",
-                "Java",
-            ]}
-        />
+<div class="bg-canvas px-4 py-12 sm:px-8 lg:px-12 xl:px-20">
+    <div class="mx-auto max-w-7xl">
+        <TerminalWindow id="projects" title="~/proyectos" command="ls ./destacados --collab">
+            {
+                projects.length > 0 ? (
+                    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+                        {projects.map((project) => (
+                            <CardProject project={project} />
+                        ))}
+                    </div>
+                ) : (
+                    <p class="text-sm text-warn">
+                        <span aria-hidden="true">! </span>
+                        No se pudo contactar con GitHub. Reintentando en la próxima visita.
+                    </p>
+                )
+            }
+
+            <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+                <a
+                    href="/projects"
+                    class="rounded border border-accent px-5 py-2.5 text-sm font-bold text-accent transition hover:bg-accent hover:text-canvas"
+                >
+                    <span aria-hidden="true">$</span> ls ./todos
+                </a>
+                {source !== "api" && (
+                    <p class="text-xs text-warn">
+                        <span aria-hidden="true">! </span>
+                        Mostrando datos en caché: GitHub no respondió.
+                    </p>
+                )}
+            </div>
+        </TerminalWindow>
     </div>
-    <!-- <ButtonPrimary
-        text="VER TODOS MIS PROYECTOS"
-        href="/projects"
-        className="w-full sm:w-auto bg-cyan-button text-black text-center font-extrabold uppercase px-8 py-3 rounded-tl-2xl rounded-br-2xl text-sm tracking-wide shadow-lg hover:bg-white hover:text-cyan-button transition duration-300 ease-in-out"
-    /> -->
-</section>
+</div>

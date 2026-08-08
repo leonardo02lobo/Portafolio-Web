@@ -1,76 +1,105 @@
-<header class="bg-navbar text-white px-16 py-6 flex flex-col justify-center items-start">
-    <nav>
-        <li class="list-none text-xl flex gap-8">
-            <a href="/" class="hover:text-cyan-button transition-colors duration-300">INICIO</a>
-            <a href="#sobremi" class="hover:text-cyan-button transition-colors duration-300">SOBRE MI</a>
-            <a href="#projects" class="hover:text-cyan-button transition-colors duration-300">PROYECTOS</a>
-            <a href="#skills" class="hover:text-cyan-button transition-colors duration-300">HABILIDADES</a>
-        </li>
-    </nav>
-</header>
-<script is:inline>
-    const initMobileMenu = () => {
-        const header = document.querySelector('header');
-        const nav = header?.querySelector('nav');
-        const list = nav?.querySelector('li');
-        if (!header || !nav || !list) return;
+---
+const links = [
+    { href: "/", label: "inicio" },
+    { href: "/#sobremi", label: "sobre-mi" },
+    { href: "/#projects", label: "proyectos" },
+    { href: "/#skills", label: "habilidades" },
+];
+---
 
-        nav.classList.add('w-full', 'md:w-auto');
-        list.classList.add(
-            'hidden',
-            'md:flex',
-            'flex-col',
-            'md:flex-row',
-            'w-full',
-            'md:w-auto',
-            'mt-4',
-            'md:mt-0',
-            'gap-4',
-            'md:gap-8',
-            'text-lg',
-            'md:text-xl'
-        );
+{/* sticky en vez de fixed: no hace falta compensar con padding en el contenido
+    y no tapa nada al hacer scroll con el teclado. */}
+<header
+    id="site-header"
+    class="header-drop sticky top-0 z-40 border-b border-line bg-surface/95 backdrop-blur-sm transition-shadow duration-300 data-[scrolled]:shadow-lg data-[scrolled]:shadow-black/40"
+>
+    <div class="flex h-[calc(var(--header-h)-1px)] items-center justify-between px-4 sm:px-8 lg:px-20">
+        <nav aria-label="Principal" class="w-full">
+            <ul id="nav-tabs" class="hidden md:flex">
+                {
+                    links.map((link, i) => (
+                        <li class="nav-item" style={`--i:${i}`}>
+                            <a
+                                href={link.href}
+                                class="inline-block border-r border-line px-5 py-3 text-sm text-dim transition hover:bg-raised hover:text-accent"
+                            >
+                                {link.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
 
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className =
-            'md:hidden inline-flex items-center justify-center p-2 rounded text-white hover:text-cyan-button transition-colors duration-300';
-        button.setAttribute('aria-label', 'Abrir menú');
-        button.setAttribute('aria-expanded', 'false');
-        button.innerHTML = `
-            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-        `;
+        <button
+            id="nav-toggle"
+            type="button"
+            class="inline-flex items-center gap-2 py-3 text-sm text-dim transition hover:text-accent md:hidden"
+            aria-expanded="false"
+            aria-controls="nav-mobile"
+        >
+            <span id="nav-icon" class="transition-transform duration-300" aria-hidden="true">▾</span>
+            <span>menu</span>
+        </button>
+    </div>
 
-        button.addEventListener('click', () => {
-            const isOpen = button.getAttribute('aria-expanded') === 'true';
-            list.classList.toggle('hidden', isOpen);
-            list.classList.toggle('flex', !isOpen);
-            button.setAttribute('aria-expanded', String(!isOpen));
-            button.setAttribute('aria-label', !isOpen ? 'Cerrar menú' : 'Abrir menú');
-        });
-
-        header.insertBefore(button, nav);
-
-        const syncByScreen = () => {
-            if (window.innerWidth >= 768) {
-                list.classList.remove('hidden');
-                list.classList.add('flex');
-                button.setAttribute('aria-expanded', 'false');
-            } else if (button.getAttribute('aria-expanded') === 'false') {
-                list.classList.add('hidden');
-                list.classList.remove('flex');
+    {/* El truco grid 0fr -> 1fr anima el desplegable sin conocer su altura,
+        a diferencia de max-height, que exige un valor mágico. */}
+    <div
+        id="nav-mobile"
+        class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out md:hidden"
+    >
+        <ul class="overflow-hidden">
+            {
+                links.map((link) => (
+                    <li>
+                        <a
+                            href={link.href}
+                            class="block border-t border-line px-4 py-3 text-sm text-dim transition hover:text-accent"
+                        >
+                            <span class="text-accent" aria-hidden="true">
+                                ▸{" "}
+                            </span>
+                            {link.label}
+                        </a>
+                    </li>
+                ))
             }
-        };
+        </ul>
+    </div>
+</header>
 
-        syncByScreen();
-        window.addEventListener('resize', syncByScreen);
+<script>
+    const header = document.querySelector<HTMLElement>("#site-header");
+    const toggle = document.querySelector<HTMLButtonElement>("#nav-toggle");
+    const menu = document.querySelector<HTMLElement>("#nav-mobile");
+    const icono = document.querySelector<HTMLElement>("#nav-icon");
+
+    // Sombra solo cuando hay contenido detrás, para que el header se despegue.
+    const marcarScroll = () => {
+        if (!header) return;
+        if (window.scrollY > 8) header.setAttribute("data-scrolled", "");
+        else header.removeAttribute("data-scrolled");
+    };
+    marcarScroll();
+    window.addEventListener("scroll", marcarScroll, { passive: true });
+
+    // Desplegable móvil.
+    const alternar = (abrir: boolean) => {
+        toggle?.setAttribute("aria-expanded", String(abrir));
+        menu?.classList.toggle("grid-rows-[1fr]", abrir);
+        menu?.classList.toggle("grid-rows-[0fr]", !abrir);
+        if (icono) icono.style.transform = abrir ? "rotate(180deg)" : "";
     };
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initMobileMenu);
-    } else {
-        initMobileMenu();
-    }
+    toggle?.addEventListener("click", () => {
+        alternar(toggle.getAttribute("aria-expanded") !== "true");
+        // El foco se queda en el control que lo alterna.
+        toggle.focus();
+    });
+
+    // Al pasar a escritorio el desplegable se cierra para no reaparecer abierto.
+    window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => {
+        if (e.matches) alternar(false);
+    });
 </script>

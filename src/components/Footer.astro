@@ -1,13 +1,38 @@
 ---
 import Github from "./icons/Github.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
+
+const year = new Date().getFullYear();
 ---
 
-<footer class="bg-navbar flex flex-row items-center justify-center gap-4 py-4">
-    <a href="https://www.linkedin.com/in/leonardo-jose-lobo-candelario-0705b634a/" target="_blank" rel="noopener noreferrer" class="transition-transform duration-500 hover:-translate-y-10">
-        <LinkedIn />
-    </a>
-    <a href="https://github.com/leonardo02lobo" target="_blank" rel="noopener noreferrer" class="transition-transform duration-500 hover:-translate-y-10">
-        <Github />
-    </a>
+<footer class="border-t border-line bg-surface">
+    <div
+        class="flex flex-col items-center justify-between gap-3 px-4 py-3 text-xs text-dim sm:flex-row sm:px-8 lg:px-20"
+    >
+        <p>
+            <span class="text-accent" aria-hidden="true">●</span>
+            leonardo@unet · {year}
+        </p>
+
+        <div class="flex items-center gap-5">
+            <a
+                href="https://github.com/leonardo02lobo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 transition hover:text-accent"
+            >
+                <Github class="h-4 w-4" />
+                <span>github</span>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/leonardo-jose-lobo-candelario-0705b634a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 transition hover:text-accent"
+            >
+                <LinkedIn class="h-4 w-4" />
+                <span>linkedin</span>
+            </a>
+        </div>
+    </div>
 </footer>

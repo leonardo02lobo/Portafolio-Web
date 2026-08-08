@@ -1,0 +1,105 @@
+---
+interface Props {
+    /** Lenguajes presentes en el listado, ya deduplicados. */
+    languages: string[];
+}
+
+const { languages } = Astro.props as Props;
+---
+
+<div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end">
+    <div class="flex-1">
+        <label for="filtro-texto" class="mb-1.5 block text-xs text-dim">
+            <span class="text-accent" aria-hidden="true">$</span> grep
+        </label>
+        <input
+            id="filtro-texto"
+            type="search"
+            placeholder="buscar por nombre o descripción…"
+            autocomplete="off"
+            class="w-full rounded border border-line bg-canvas px-3 py-2 text-sm text-fg placeholder:text-dim/70 focus:border-accent"
+        />
+    </div>
+
+    <div class="sm:w-56">
+        <label for="filtro-lenguaje" class="mb-1.5 block text-xs text-dim">
+            <span class="text-accent" aria-hidden="true">$</span> --lang
+        </label>
+        <select
+            id="filtro-lenguaje"
+            class="w-full rounded border border-line bg-canvas px-3 py-2 text-sm text-fg focus:border-accent"
+        >
+            <option value="">todos</option>
+            {languages.map((language) => <option value={language.toLowerCase()}>{language}</option>)}
+        </select>
+    </div>
+</div>
+
+<p id="filtros-conteo" class="mb-4 text-xs text-dim" role="status" aria-live="polite"></p>
+
+<div id="filtros-vacio" class="hidden py-8 text-center">
+    <p class="text-sm text-warn">
+        <span aria-hidden="true">! </span>
+        Ningún proyecto coincide con el filtro.
+    </p>
+    <button
+        id="filtros-limpiar"
+        type="button"
+        class="mt-3 rounded border border-line px-4 py-2 text-sm text-accent transition hover:border-accent"
+    >
+        <span aria-hidden="true">$</span> reset
+    </button>
+</div>
+
+<script>
+    // Filtrado en cliente sobre tarjetas ya renderizadas: con esta escala no
+    // hace falta paginar en servidor, y sin JS se ven todos los proyectos.
+    const texto = document.querySelector<HTMLInputElement>("#filtro-texto");
+    const lenguaje = document.querySelector<HTMLSelectElement>("#filtro-lenguaje");
+    const conteo = document.querySelector<HTMLElement>("#filtros-conteo");
+    const vacio = document.querySelector<HTMLElement>("#filtros-vacio");
+    const limpiar = document.querySelector<HTMLButtonElement>("#filtros-limpiar");
+    const tarjetas = Array.from(document.querySelectorAll<HTMLElement>("[data-project]"));
+
+    /** Sin acentos ni mayúsculas: "diseño" debe encontrarse escribiendo "diseno". */
+    const normalizar = (valor: string) =>
+        valor
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+
+    function aplicar() {
+        const consulta = normalizar(texto?.value ?? "");
+        const lang = lenguaje?.value ?? "";
+        let visibles = 0;
+
+        for (const tarjeta of tarjetas) {
+            const nombre = normalizar(tarjeta.dataset.name ?? "");
+            const descripcion = normalizar(tarjeta.dataset.description ?? "");
+            const langs = (tarjeta.dataset.languages ?? "").split("|");
+
+            const coincideTexto = !consulta || nombre.includes(consulta) || descripcion.includes(consulta);
+            const coincideLang = !lang || langs.includes(lang);
+            const visible = coincideTexto && coincideLang;
+
+            tarjeta.parentElement?.classList.toggle("hidden", !visible);
+            if (visible) visibles++;
+        }
+
+        if (conteo) {
+            conteo.textContent = `${visibles} de ${tarjetas.length} proyectos`;
+        }
+        vacio?.classList.toggle("hidden", visibles > 0);
+    }
+
+    texto?.addEventListener("input", aplicar);
+    lenguaje?.addEventListener("change", aplicar);
+    limpiar?.addEventListener("click", () => {
+        if (texto) texto.value = "";
+        if (lenguaje) lenguaje.value = "";
+        aplicar();
+        texto?.focus();
+    });
+
+    aplicar();
+</script>

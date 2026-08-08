@@ -1,0 +1,46 @@
+---
+interface Props {
+    stars: number;
+    forks: number;
+    language: string | null;
+    updatedAt: string;
+}
+
+const { stars, forks, language, updatedAt } = Astro.props as Props;
+
+function formatUpdated(iso: string): string | null {
+    const date = new Date(iso);
+    if (Number.isNaN(date.getTime())) return null;
+
+    const days = Math.floor((Date.now() - date.getTime()) / 86_400_000);
+    if (days <= 0) return "hoy";
+    if (days === 1) return "ayer";
+    if (days < 30) return `hace ${days} d`;
+    if (days < 365) return `hace ${Math.floor(days / 30)} mes`;
+    return `hace ${Math.floor(days / 365)} a`;
+}
+
+// Cada métrica ausente se omite en vez de renderizarse vacía, así la fila
+// nunca queda con huecos ni con separadores sueltos.
+const items = [
+    stars > 0 ? { icon: "★", label: `${stars}`, title: `${stars} estrellas` } : null,
+    forks > 0 ? { icon: "⑂", label: `${forks}`, title: `${forks} forks` } : null,
+    language ? { icon: "●", label: language, title: `Lenguaje principal: ${language}` } : null,
+    formatUpdated(updatedAt)
+        ? { icon: "⏱", label: formatUpdated(updatedAt)!, title: "Última actualización" }
+        : null,
+].filter((item) => item !== null);
+---
+
+{
+    items.length > 0 && (
+        <ul class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-dim">
+            {items.map((item) => (
+                <li class="flex items-center gap-1.5" title={item.title}>
+                    <span aria-hidden="true">{item.icon}</span>
+                    <span>{item.label}</span>
+                </li>
+            ))}
+        </ul>
+    )
+}
