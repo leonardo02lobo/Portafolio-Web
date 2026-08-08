@@ -1,0 +1,39 @@
+---
+interface Props {
+    /** Texto de la barra de título: ruta o nombre de archivo. */
+    title: string;
+    /** Comando mostrado como primera línea del contenido. Opcional. */
+    command?: string;
+    id?: string;
+    class?: string;
+}
+
+const { title, command, id, class: className = "" } = Astro.props as Props;
+---
+
+<section id={id} class={`w-full rounded-md border border-line bg-surface ${className}`}>
+    <header
+        class="flex items-center gap-3 rounded-t-md border-b border-line bg-raised px-3 py-2 sm:px-4"
+    >
+        <span class="flex shrink-0 items-center gap-1.5" aria-hidden="true">
+            <span class="block h-2.5 w-2.5 rounded-full bg-warn/70"></span>
+            <span class="block h-2.5 w-2.5 rounded-full bg-accent-2/70"></span>
+            <span class="block h-2.5 w-2.5 rounded-full bg-accent/70"></span>
+        </span>
+        <span class="truncate text-xs text-dim sm:text-sm">{title}</span>
+    </header>
+
+    <div class="p-4 sm:p-6 lg:p-8">
+        {
+            command && (
+                <p class="mb-5 text-sm text-dim sm:text-base">
+                    <span class="text-accent" aria-hidden="true">
+                        ${" "}
+                    </span>
+                    {command}
+                </p>
+            )
+        }
+        <slot />
+    </div>
+</section>

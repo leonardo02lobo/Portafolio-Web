@@ -24,3 +24,9 @@ pnpm-debug.log*
 .idea/
 
 .vercel/
+.vercel
+.env*
+!.env.example
+
+# artefactos de pruebas con Playwright
+.playwright-mcp/

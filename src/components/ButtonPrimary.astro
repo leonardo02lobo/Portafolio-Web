@@ -1,15 +1,25 @@
 ---
 interface Props {
     text: string;
-    href?: string;
-    className: string;
+    href: string;
+    /** solid: acento relleno. ghost: contorno. */
+    variant?: "solid" | "ghost";
+    class?: string;
 }
-const { text, href,className } = Astro.props as Props;
+
+const { text, href, variant = "solid", class: className = "" } = Astro.props as Props;
+
+const base =
+    "inline-block rounded border px-6 py-2.5 text-sm font-bold tracking-wide transition";
+const variants = {
+    solid: "border-accent bg-accent text-canvas hover:bg-transparent hover:text-accent",
+    ghost: "border-line text-fg hover:border-accent hover:text-accent",
+} as const;
 ---
 
-<button
-    class=`${className}`
-    onclick={`window.location.href='${href}'`}
->
-    {text}
-</button>
+{/* Enlace real, no un <button> con onclick: navegable por teclado, visible
+    para lectores de pantalla y rastreable por el crawler. */}
+<a href={href} class={`${base} ${variants[variant]} ${className}`}>
+    <span class="text-current opacity-60" aria-hidden="true">$</span>
+    {" "}{text}
+</a>

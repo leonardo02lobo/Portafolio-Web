@@ -1,0 +1,850 @@
+[
+  {
+    "slug": "Dining-System-UNET-Backend",
+    "name": "Dining-System-UNET-Backend",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Dining-System-UNET-Backend",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Dining-System-UNET-Backend",
+    "homepage": "https://dining-system-unet-backend-nine.vercel.app",
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Python",
+    "languages": [
+      "Python",
+      "Mako",
+      "Dockerfile"
+    ],
+    "topics": [],
+    "skills": [
+      "Python",
+      "Mako",
+      "Dockerfile"
+    ],
+    "updatedAt": "2026-08-07T15:13:14Z",
+    "isArchived": false,
+    "collaborators": [
+      {
+        "login": "FranklyBautista",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/186510439?v=4",
+        "profileUrl": "https://github.com/FranklyBautista",
+        "contributions": 21
+      }
+    ]
+  },
+  {
+    "slug": "Dining-System-UNET-Front",
+    "name": "Dining-System-UNET-Front",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Dining-System-UNET-Front",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Dining-System-UNET-Front",
+    "homepage": "https://dining-system-unet-front.vercel.app",
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "TypeScript",
+    "languages": [
+      "TypeScript",
+      "CSS",
+      "Rust",
+      "HTML",
+      "JavaScript"
+    ],
+    "topics": [],
+    "skills": [
+      "TypeScript",
+      "CSS",
+      "Rust",
+      "HTML",
+      "JavaScript"
+    ],
+    "updatedAt": "2026-08-07T03:43:15Z",
+    "isArchived": false,
+    "collaborators": [
+      {
+        "login": "FranklyBautista",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/186510439?v=4",
+        "profileUrl": "https://github.com/FranklyBautista",
+        "contributions": 23
+      }
+    ]
+  },
+  {
+    "slug": "Comunicaciones-2--Parcial-1",
+    "name": "Comunicaciones-2--Parcial-1",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Comunicaciones-2--Parcial-1",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Comunicaciones-2--Parcial-1",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 0,
+    "forks": 0,
+    "primaryLanguage": "Astro",
+    "languages": [
+      "Astro",
+      "TypeScript",
+      "Shell",
+      "Dockerfile",
+      "JavaScript"
+    ],
+    "topics": [],
+    "skills": [
+      "Astro",
+      "TypeScript",
+      "Shell",
+      "Dockerfile",
+      "JavaScript"
+    ],
+    "updatedAt": "2026-08-06T23:52:39Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Automatization-",
+    "name": "Automatization-",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Automatization-",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Automatization-",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "JavaScript",
+    "languages": [
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "topics": [],
+    "skills": [
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "updatedAt": "2026-07-28T13:53:11Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "bspwm-rice-configs",
+    "name": "bspwm-rice-configs",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/bspwm-rice-configs",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/bspwm-rice-configs",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 2,
+    "forks": 0,
+    "primaryLanguage": "Shell",
+    "languages": [
+      "Shell",
+      "SCSS"
+    ],
+    "topics": [],
+    "skills": [
+      "Shell",
+      "SCSS"
+    ],
+    "updatedAt": "2026-07-14T16:54:12Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "auto-display-manager",
+    "name": "auto-display-manager",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/auto-display-manager",
+    "description": "Gestión automática de pantallas externas en Linux con detección automática de conexión/desconexión",
+    "url": "https://github.com/leonardo02lobo/auto-display-manager",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Python",
+    "languages": [
+      "Python"
+    ],
+    "topics": [],
+    "skills": [
+      "Python"
+    ],
+    "updatedAt": "2026-07-12T12:14:01Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Quiniela-Mundial-2026-Backend",
+    "name": "Quiniela-Mundial-2026-Backend",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Quiniela-Mundial-2026-Backend",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Quiniela-Mundial-2026-Backend",
+    "homepage": "https://quiniela-mundial-2026-backend.vercel.app",
+    "imageUrl": null,
+    "stars": 0,
+    "forks": 0,
+    "primaryLanguage": "Python",
+    "languages": [
+      "Python",
+      "Dockerfile",
+      "Mako"
+    ],
+    "topics": [],
+    "skills": [
+      "Python",
+      "Dockerfile",
+      "Mako"
+    ],
+    "updatedAt": "2026-06-14T16:16:17Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "HWC-Frontend-Integrations",
+    "name": "HWC-Frontend-Integrations",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/HWC-Frontend-Integrations",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/HWC-Frontend-Integrations",
+    "homepage": "https://hwc-frontend-integrations.vercel.app",
+    "imageUrl": null,
+    "stars": 0,
+    "forks": 0,
+    "primaryLanguage": "TypeScript",
+    "languages": [
+      "TypeScript",
+      "Astro",
+      "CSS",
+      "JavaScript",
+      "Dockerfile"
+    ],
+    "topics": [],
+    "skills": [
+      "TypeScript",
+      "Astro",
+      "CSS",
+      "JavaScript",
+      "Dockerfile"
+    ],
+    "updatedAt": "2026-06-12T11:35:58Z",
+    "isArchived": false,
+    "collaborators": [
+      {
+        "login": "IvanMoch",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/142510054?v=4",
+        "profileUrl": "https://github.com/IvanMoch",
+        "contributions": 52
+      },
+      {
+        "login": "PancoBits",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/131539490?v=4",
+        "profileUrl": "https://github.com/PancoBits",
+        "contributions": 4
+      },
+      {
+        "login": "FranklyBautista",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/186510439?v=4",
+        "profileUrl": "https://github.com/FranklyBautista",
+        "contributions": 2
+      }
+    ]
+  },
+  {
+    "slug": "Quiniela-Mundial-2026",
+    "name": "Quiniela-Mundial-2026",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Quiniela-Mundial-2026",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Quiniela-Mundial-2026",
+    "homepage": "https://quiniela-mundial-2026-ten-ivory.vercel.app",
+    "imageUrl": null,
+    "stars": 0,
+    "forks": 0,
+    "primaryLanguage": "TypeScript",
+    "languages": [
+      "TypeScript",
+      "CSS",
+      "JavaScript"
+    ],
+    "topics": [],
+    "skills": [
+      "TypeScript",
+      "CSS",
+      "JavaScript"
+    ],
+    "updatedAt": "2026-06-09T23:17:04Z",
+    "isArchived": false,
+    "collaborators": [
+      {
+        "login": "IvanMoch",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/142510054?v=4",
+        "profileUrl": "https://github.com/IvanMoch",
+        "contributions": 33
+      }
+    ]
+  },
+  {
+    "slug": "Personal-Projects-Odoo",
+    "name": "Personal-Projects-Odoo",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Personal-Projects-Odoo",
+    "description": "This repo is for save addon and modifications the Odoo in diferent versions.",
+    "url": "https://github.com/leonardo02lobo/Personal-Projects-Odoo",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 0,
+    "forks": 0,
+    "primaryLanguage": null,
+    "languages": [],
+    "topics": [],
+    "skills": [],
+    "updatedAt": "2026-04-28T23:25:04Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Space-Invader-Clon-in-Java",
+    "name": "Space Invaders Game",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Space-Invader-Clon-in-Java",
+    "description": "Juego de invasores espaciales desarrollado en Java junto a Java Swing. Incluye mecánicas de juego y sistema de puntuación.",
+    "url": "https://github.com/leonardo02lobo/Space-Invader-Clon-in-Java",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 2,
+    "forks": 0,
+    "primaryLanguage": "Java",
+    "languages": [
+      "Java"
+    ],
+    "topics": [],
+    "skills": [
+      "Java",
+      "Java Swing"
+    ],
+    "updatedAt": "2026-04-23T23:07:45Z",
+    "isArchived": false,
+    "collaborators": [
+      {
+        "login": "Moisesdavid2109",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/132418702?v=4",
+        "profileUrl": "https://github.com/Moisesdavid2109",
+        "contributions": 34
+      }
+    ]
+  },
+  {
+    "slug": "Portafolio-Web",
+    "name": "Portafolio-Web",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Portafolio-Web",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Portafolio-Web",
+    "homepage": "https://portafolio-web-mmtl.vercel.app",
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Astro",
+    "languages": [
+      "Astro",
+      "CSS",
+      "JavaScript"
+    ],
+    "topics": [],
+    "skills": [
+      "Astro",
+      "CSS",
+      "JavaScript"
+    ],
+    "updatedAt": "2026-04-21T01:51:06Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Frontend-Sistema-de-comedor-UNET-SI",
+    "name": "Frontend-Sistema-de-comedor-UNET-SI",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Frontend-Sistema-de-comedor-UNET-SI",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Frontend-Sistema-de-comedor-UNET-SI",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 0,
+    "forks": 0,
+    "primaryLanguage": "Astro",
+    "languages": [
+      "Astro",
+      "TypeScript",
+      "CSS",
+      "JavaScript"
+    ],
+    "topics": [],
+    "skills": [
+      "Astro",
+      "TypeScript",
+      "CSS",
+      "JavaScript"
+    ],
+    "updatedAt": "2026-04-16T03:06:13Z",
+    "isArchived": false,
+    "collaborators": [
+      {
+        "login": "KevinZambranoC",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/124224678?v=4",
+        "profileUrl": "https://github.com/KevinZambranoC",
+        "contributions": 2
+      },
+      {
+        "login": "PancoBits",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/131539490?v=4",
+        "profileUrl": "https://github.com/PancoBits",
+        "contributions": 1
+      }
+    ]
+  },
+  {
+    "slug": "jarvisCode",
+    "name": "jarvisCode",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/jarvisCode",
+    "description": "Agent typr jarvis for automatic my tasks ",
+    "url": "https://github.com/leonardo02lobo/jarvisCode",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Python",
+    "languages": [
+      "Python"
+    ],
+    "topics": [],
+    "skills": [
+      "Python"
+    ],
+    "updatedAt": "2026-04-11T12:10:10Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "tunnels-on-C",
+    "name": "tunnels-on-C",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/tunnels-on-C",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/tunnels-on-C",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 0,
+    "forks": 0,
+    "primaryLanguage": "C",
+    "languages": [
+      "C"
+    ],
+    "topics": [],
+    "skills": [
+      "C"
+    ],
+    "updatedAt": "2026-03-22T14:12:24Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Memory-Monitor",
+    "name": "Memory-Monitor",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Memory-Monitor",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Memory-Monitor",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Python",
+    "languages": [
+      "Python"
+    ],
+    "topics": [],
+    "skills": [
+      "Python"
+    ],
+    "updatedAt": "2026-03-08T21:10:02Z",
+    "isArchived": false,
+    "collaborators": [
+      {
+        "login": "FranklyBautista",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/186510439?v=4",
+        "profileUrl": "https://github.com/FranklyBautista",
+        "contributions": 2
+      }
+    ]
+  },
+  {
+    "slug": "WikiUNETAPI",
+    "name": "WikiUNETAPI",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/WikiUNETAPI",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/WikiUNETAPI",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 0,
+    "forks": 0,
+    "primaryLanguage": "Blade",
+    "languages": [
+      "Blade",
+      "PHP",
+      "CSS",
+      "JavaScript"
+    ],
+    "topics": [],
+    "skills": [
+      "Blade",
+      "PHP",
+      "CSS",
+      "JavaScript"
+    ],
+    "updatedAt": "2025-11-02T19:07:03Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "ProConnect",
+    "name": "ProConnect",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/ProConnect",
+    "description": "Mi proyecto más ambicioso: una red social para estudiantes universitarios, con el objetivo de conectar a los estudiantes de la UNET y fomentar la colaboración académica y social entre ellos.",
+    "url": "https://github.com/leonardo02lobo/ProConnect",
+    "homepage": null,
+    "imageUrl": "https://www.unet.edu.ve/images/stories/logo_unet_medida.jpg",
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Java",
+    "languages": [
+      "Java",
+      "TypeScript",
+      "Astro",
+      "JavaScript",
+      "CSS"
+    ],
+    "topics": [],
+    "skills": [
+      "Astro",
+      "Tailwind CSS",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Spring Boot",
+      "Java"
+    ],
+    "updatedAt": "2025-10-26T18:32:57Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Prueba-Tecnica-Athena",
+    "name": "Prueba-Tecnica-Athena",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Prueba-Tecnica-Athena",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Prueba-Tecnica-Athena",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "PHP",
+    "languages": [
+      "PHP",
+      "Blade",
+      "TypeScript",
+      "Java",
+      "Astro",
+      "JavaScript",
+      "CSS"
+    ],
+    "topics": [],
+    "skills": [
+      "PHP",
+      "Blade",
+      "TypeScript",
+      "Java",
+      "Astro",
+      "JavaScript",
+      "CSS"
+    ],
+    "updatedAt": "2025-10-20T23:47:49Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Api-bookshop-Spring",
+    "name": "Api-bookshop-Spring",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Api-bookshop-Spring",
+    "description": "This project is a bookshop with spring framework with java ",
+    "url": "https://github.com/leonardo02lobo/Api-bookshop-Spring",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Java",
+    "languages": [
+      "Java"
+    ],
+    "topics": [],
+    "skills": [
+      "Java"
+    ],
+    "updatedAt": "2025-09-10T23:17:07Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Formulario-de-Seguro",
+    "name": "Formulario-de-Seguro",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Formulario-de-Seguro",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Formulario-de-Seguro",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "HTML",
+    "languages": [
+      "HTML",
+      "JavaScript",
+      "CSS"
+    ],
+    "topics": [],
+    "skills": [
+      "HTML",
+      "JavaScript",
+      "CSS"
+    ],
+    "updatedAt": "2025-08-23T01:35:33Z",
+    "isArchived": false,
+    "collaborators": [
+      {
+        "login": "alejomm05",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/161762980?v=4",
+        "profileUrl": "https://github.com/alejomm05",
+        "contributions": 1
+      }
+    ]
+  },
+  {
+    "slug": "Calcular-Indice-Academico-Frontend",
+    "name": "Calcular-Indice-Academico-Frontend",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Calcular-Indice-Academico-Frontend",
+    "description": "Este proyecto esta desarrollado en react native para trabajar tanto del lado movil Android como Web",
+    "url": "https://github.com/leonardo02lobo/Calcular-Indice-Academico-Frontend",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "TypeScript",
+    "languages": [
+      "TypeScript",
+      "Kotlin",
+      "Ruby",
+      "Swift",
+      "JavaScript",
+      "C"
+    ],
+    "topics": [],
+    "skills": [
+      "TypeScript",
+      "Kotlin",
+      "Ruby",
+      "Swift",
+      "JavaScript",
+      "C"
+    ],
+    "updatedAt": "2025-08-21T02:57:15Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Calcular-Indice-Academico-Backend",
+    "name": "Calcular-Indice-Academico-Backend",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Calcular-Indice-Academico-Backend",
+    "description": "Este Backend esta siendo realizado con NodeJs junto a Typescript utilizando MySQL como base de datos",
+    "url": "https://github.com/leonardo02lobo/Calcular-Indice-Academico-Backend",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "TypeScript",
+    "languages": [
+      "TypeScript"
+    ],
+    "topics": [],
+    "skills": [
+      "TypeScript"
+    ],
+    "updatedAt": "2025-08-20T19:17:16Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Algoritmo-Genetico-En-Java",
+    "name": "Algoritmo-Genetico-En-Java",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Algoritmo-Genetico-En-Java",
+    "description": "Proyecto de algoritmo genetico desarrollado en Java para poder evaluar la evolucion de 8 cryptomonedas planteadas en los ultimos 8 meses (32 semanas)",
+    "url": "https://github.com/leonardo02lobo/Algoritmo-Genetico-En-Java",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Java",
+    "languages": [
+      "Java"
+    ],
+    "topics": [],
+    "skills": [
+      "Java"
+    ],
+    "updatedAt": "2025-08-18T15:52:11Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Instagram-Clone",
+    "name": "Instagram-Clone",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Instagram-Clone",
+    "description": "This Project is developer in Astro with GO and node.js",
+    "url": "https://github.com/leonardo02lobo/Instagram-Clone",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 2,
+    "forks": 0,
+    "primaryLanguage": "Astro",
+    "languages": [
+      "Astro",
+      "Go",
+      "TypeScript",
+      "JavaScript",
+      "CSS"
+    ],
+    "topics": [],
+    "skills": [
+      "Astro",
+      "Go",
+      "TypeScript",
+      "JavaScript",
+      "CSS"
+    ],
+    "updatedAt": "2025-08-18T15:52:04Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "GestureSystem",
+    "name": "GestureSystem",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/GestureSystem",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/GestureSystem",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Python",
+    "languages": [
+      "Python"
+    ],
+    "topics": [],
+    "skills": [
+      "Python"
+    ],
+    "updatedAt": "2025-08-12T23:28:05Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Folders-Encrypted",
+    "name": "Folders-Encrypted",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Folders-Encrypted",
+    "description": "This Project is developed to encrypted folders ",
+    "url": "https://github.com/leonardo02lobo/Folders-Encrypted",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "Python",
+    "languages": [],
+    "topics": [],
+    "skills": [],
+    "updatedAt": "2025-07-08T02:26:05Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "Undertale-Game-Unity",
+    "name": "Undertale-Game-Unity",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/Undertale-Game-Unity",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/Undertale-Game-Unity",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "C#",
+    "languages": [],
+    "topics": [],
+    "skills": [],
+    "updatedAt": "2025-06-08T19:19:41Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "12-meses-12-programas",
+    "name": "12-meses-12-programas",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/12-meses-12-programas",
+    "description": "Este repositorio trabajara con una serie de programas que se desarrollaran en el tiempo de 1 mes, cada proyecto se ira incrementando de nivel por medio de los meses",
+    "url": "https://github.com/leonardo02lobo/12-meses-12-programas",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "HTML",
+    "languages": [],
+    "topics": [],
+    "skills": [],
+    "updatedAt": "2025-05-09T22:47:05Z",
+    "isArchived": false,
+    "collaborators": []
+  },
+  {
+    "slug": "29Gym_sc",
+    "name": "29Gym_sc",
+    "owner": "leonardo02lobo",
+    "fullName": "leonardo02lobo/29Gym_sc",
+    "description": "",
+    "url": "https://github.com/leonardo02lobo/29Gym_sc",
+    "homepage": null,
+    "imageUrl": null,
+    "stars": 1,
+    "forks": 0,
+    "primaryLanguage": "HTML",
+    "languages": [],
+    "topics": [],
+    "skills": [],
+    "updatedAt": "2025-01-06T14:53:14Z",
+    "isArchived": false,
+    "collaborators": []
+  }
+]

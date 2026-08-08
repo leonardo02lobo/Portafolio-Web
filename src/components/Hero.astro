@@ -1,48 +1,108 @@
 ---
 import ButtonPrimary from "./ButtonPrimary.astro";
-import Footer from "./Footer.astro";
-import Header from "./Header.astro";
+import TerminalPrompt from "./TerminalPrompt.astro";
 ---
 
-<main id="hero" class="flex flex-col justify-between min-h-screen w-full">
-    <Header />
-    <section class="flex-grow flex flex-col lg:flex-row items-center justify-between gap-10 px-4 sm:px-8 lg:px-20 py-8 lg:py-0">
-        <div class="flex w-full lg:w-1/2 flex-col text-white justify-center items-start gap-6">
-            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Leonardo Lobo</h1>
-            <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold">
-                ESTUDIANTE DE INGENIERIA EN INFORMATICA (UNET) |
-            </h2>
-            <h2 class="text-lg sm:text-xl lg:text-2xl font-semibold">
-                APASIONADO POR DESARROLLO (Java, Python), CIBERSEGURIDAD Y AI
-            </h2>
-            <p class="text-base sm:text-lg w-full lg:w-3/4">
-                Hola, soy Leonardo. Un desarrollador curioso y estudiante de
-                ingeniería en la UNET, enfocado en crear soluciones tecnológicas
-                impactantes. Mi viaje abarca el robusto ecosistema Java, la
-                agilidad de Python, y la intriga de la Ciberseguridad y la IA,
-                buscando siempre el control total y el aprendizaje continuo en
-                entornos como Kali Linux. ¡Explora mi mundo digital!
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 lg:gap-12 w-full sm:w-auto">
-                <ButtonPrimary
-                text="VER MIS PROYECTOS"
-                href="#projects"
-                className="cursor-pointer bg-cyan-button text-black font-extrabold uppercase px-8 py-3 rounded-tl-2xl rounded-br-2xl text-sm tracking-wide shadow-lg hover:bg-white hover:text-cyan-button transition duration-300 ease-in-out"
-            />
-            <ButtonPrimary
-                text="SOBRE MI"
-                href="#sobremi"
-                className="cursor-pointer bg-transparent text-white border-2 border-white font-extrabold uppercase px-8 py-3 rounded-tl-2xl rounded-br-2xl text-sm tracking-wide shadow-lg hover:bg-white hover:text-cyan-button transition duration-300 ease-in-out"
-            />
+<div class="flex min-h-[calc(100vh-var(--header-h))] flex-col bg-canvas">
+    <main
+        class="flex flex-grow flex-col items-center justify-center gap-10 px-4 py-12 sm:px-8 lg:flex-row lg:items-center lg:gap-14 lg:px-20"
+    >
+        <div class="w-full max-w-2xl lg:w-3/5">
+            <div class="rounded-md border border-line bg-surface">
+                <header
+                    class="flex items-center gap-3 rounded-t-md border-b border-line bg-raised px-4 py-2"
+                >
+                    <span class="flex shrink-0 items-center gap-1.5" aria-hidden="true">
+                        <span class="block h-2.5 w-2.5 rounded-full bg-warn/70"></span>
+                        <span class="block h-2.5 w-2.5 rounded-full bg-accent-2/70"></span>
+                        <span class="block h-2.5 w-2.5 rounded-full bg-accent/70"></span>
+                    </span>
+                    <span class="text-xs text-dim sm:text-sm">leonardo@unet: ~</span>
+                </header>
+
+                <div class="space-y-5 p-5 sm:p-7">
+                    <div class="space-y-2">
+                        <TerminalPrompt command="whoami" />
+                        <h1 class="text-3xl font-bold text-fg sm:text-4xl lg:text-5xl">
+                            Leonardo Lobo
+                        </h1>
+                        <p class="text-sm text-accent-2 sm:text-base">
+                            Estudiante de Ingeniería en Informática · UNET
+                        </p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <TerminalPrompt command="cat perfil.txt" />
+                        <p class="text-sm font-medium text-warn sm:text-base">
+                            Desarrollo (Java, Python) · Ciberseguridad · IA
+                        </p>
+                        <p class="text-sm leading-relaxed text-fg/80">
+                            Hola, soy Leonardo. Un desarrollador curioso y estudiante de
+                            ingeniería en la UNET, enfocado en crear soluciones tecnológicas
+                            impactantes. Mi viaje abarca el robusto ecosistema Java, la
+                            agilidad de Python, y la intriga de la Ciberseguridad y la IA,
+                            buscando siempre el control total y el aprendizaje continuo en
+                            entornos como Kali Linux.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <TerminalPrompt command="./explorar --menu" />
+                        <div class="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                            <ButtonPrimary text="ver mis proyectos" href="#projects" />
+                            <ButtonPrimary text="sobre mi" href="#sobremi" variant="ghost" />
+                        </div>
+                    </div>
+
+                    <p class="text-sm sm:text-base" aria-hidden="true">
+                        <span class="text-dim">leonardo@unet:~</span><span class="text-accent">$</span>
+                        <span class="term-cursor"></span>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="flex justify-center w-full lg:w-1/2">
+
+        <div class="flex w-full justify-center lg:w-2/5">
             <img
                 src="https://avatars.githubusercontent.com/u/131476039?s=400&u=70018a95282cd9e6bfc6f218d0c2c3364e6bb149&v=4"
-                alt="Profile Picture"
-                class="w-full max-w-xs sm:max-w-sm lg:max-w-md h-auto rounded-lg shadow-lg"
+                alt="Leonardo Lobo"
+                width="320"
+                height="320"
+                class="w-full max-w-[240px] rounded-md border border-line sm:max-w-xs"
             />
         </div>
-    </section>
-    <Footer />
-</main>
+    </main>
+</div>
+
+<script>
+    // Revela los comandos carácter a carácter. El texto ya está en el DOM: se
+    // vacía y se vuelve a escribir, así que el HTML servido lo contiene entero.
+    const prefiereMenosMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const objetivos = Array.from(document.querySelectorAll<HTMLElement>("[data-typewriter]"));
+
+    if (!prefiereMenosMovimiento && objetivos.length > 0) {
+        const textos = objetivos.map((el) => el.textContent ?? "");
+
+        // Se reserva el ancho final antes de vaciar para que la línea no
+        // desplace el contenido posterior mientras se escribe.
+        objetivos.forEach((el, i) => {
+            el.style.display = "inline-block";
+            el.style.minWidth = `${textos[i].length}ch`;
+            el.textContent = "";
+        });
+
+        const escribir = async () => {
+            for (let i = 0; i < objetivos.length; i++) {
+                const el = objetivos[i];
+                const texto = textos[i];
+                for (let c = 0; c <= texto.length; c++) {
+                    el.textContent = texto.slice(0, c);
+                    await new Promise((r) => setTimeout(r, 38));
+                }
+                await new Promise((r) => setTimeout(r, 260));
+            }
+        };
+
+        escribir();
+    }
+</script>

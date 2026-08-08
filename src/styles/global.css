@@ -1,11 +1,53 @@
 @import "tailwindcss";
 
+/* ── Tipografía self-hosted ────────────────────────────────────────────────
+   Servida desde public/fonts/ en vez de un CDN: evita una petición a un host
+   externo en el camino crítico y el CLS asociado. */
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ── Tokens del tema ───────────────────────────────────────────────────────
+   Fuente única de verdad de la paleta. Ningún componente debe usar valores
+   hexadecimales ni rgb() literales: todo se consume desde aquí.
+
+   Contraste sobre --color-canvas (#0D1117):
+     accent   #00FF9C ≈ 13:1   dim   #8B949E ≈ 7:1
+     fg       #E6EDF3 ≈ 15:1   warn  #F2A01F ≈ 8:1   (todos superan AA) */
+
 @theme {
-    --color-navbar: #0f1216;
-    --color-cyan-button: #00D2D2;
-    --color-background: #161B22;
-    --color-text: #F2A01F;
-    --color-secondary-background: #1A2026;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    --color-canvas: #0d1117;
+    --color-surface: #161b22;
+    --color-raised: #1c2129;
+    --color-line: #30363d;
+    --color-fg: #e6edf3;
+    --color-dim: #8b949e;
+    --color-accent: #00ff9c;
+    --color-accent-2: #00d2d2;
+    --color-warn: #f2a01f;
 }
 
 html,
@@ -14,33 +56,113 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
+    /* Altura TOTAL del header, borde inferior incluido. La consumen la barra
+       (que le resta ese borde), el hero —que la descuenta de su min-height
+       para que la primera pantalla no se pase del viewport— y el
+       scroll-padding de los anclajes. */
+    --header-h: 2.875rem;
+    /* El header sticky no debe tapar la sección al saltar a un ancla. */
+    scroll-padding-top: var(--header-h);
 }
 
-#hero {
-    position: relative;
-    isolation: isolate;
-    background-image: url('/src/assets/fondo_Hero.png');
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
+body {
+    background: var(--color-canvas);
+    color: var(--color-fg);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
-#hero::before {
-    content: '';
-    position: absolute;
+/* ── Foco visible ──────────────────────────────────────────────────────────
+   Un solo lugar para el indicador de foco de todo elemento interactivo. */
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ── Capa decorativa de scanline y grano ───────────────────────────────────
+   Puramente estética. Se apaga por completo bajo prefers-reduced-motion:
+   un patrón de líneas sobre fondo oscuro es tan hostil para la sensibilidad
+   vestibular como una animación. */
+
+.fx-scanlines {
+    position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.57);
+    z-index: 50;
     pointer-events: none;
-    z-index: 0;
+    display: none;
 }
 
-#hero > * {
-    position: relative;
-    z-index: 1;
+@media (prefers-reduced-motion: no-preference) {
+    .fx-scanlines {
+        display: block;
+        background-image: repeating-linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.24) 0px,
+            rgba(0, 0, 0, 0.24) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+        opacity: 0.04;
+    }
+}
+
+/* ── Entrada del header ────────────────────────────────────────────────────
+   En CSS y no en JS: forzar el primer frame con requestAnimationFrame se
+   coalesce y la transición no llega a pintarse. Sin fill-mode, al terminar el
+   elemento vuelve a su estilo base y no queda transform residual que pueda
+   interferir con position: sticky. */
+
+@media (prefers-reduced-motion: no-preference) {
+    .header-drop {
+        animation: header-drop 550ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .header-drop .nav-item {
+        animation: nav-item-drop 400ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+        animation-delay: calc(160ms + var(--i) * 70ms);
+    }
+}
+
+@keyframes header-drop {
+    from {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes nav-item-drop {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+/* ── Cursor de terminal ────────────────────────────────────────────────────
+   Bloque parpadeante. Sin movimiento, se muestra fijo. */
+
+.term-cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.05em;
+    margin-left: 0.15em;
+    vertical-align: text-bottom;
+    background: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .term-cursor {
+        animation: term-blink 1.1s steps(2, start) infinite;
+    }
+}
+
+@keyframes term-blink {
+    to {
+        visibility: hidden;
+    }
 }

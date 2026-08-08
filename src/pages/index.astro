@@ -1,14 +1,23 @@
 ---
 import AboutMe from "../components/AboutMe.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import Layout from "../layouts/Layout.astro";
+import { CACHE_CONTROL } from "../lib/github/projects";
+
+// El CDN absorbe el grueso del tráfico; stale-while-revalidate evita que un
+// refresco lento contra GitHub bloquee a un visitante.
+Astro.response.headers.set("Cache-Control", CACHE_CONTROL);
 ---
 
 <Layout>
-	<Hero/>
-	<Skills/>
+	<Header />
+	<Hero />
+	<Skills />
 	<Projects />
-	<AboutMe/>
+	<AboutMe />
+	<Footer />
 </Layout>

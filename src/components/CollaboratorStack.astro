@@ -1,0 +1,77 @@
+---
+import type { Collaborator } from "../lib/github/types";
+
+interface Props {
+    collaborators: Collaborator[];
+    /** Avatares mostrados antes de agrupar el resto en +N. */
+    max?: number;
+}
+
+const { collaborators, max = 4 } = Astro.props as Props;
+
+const visible = collaborators.slice(0, max);
+const overflow = collaborators.length - visible.length;
+---
+
+{/* Sin colaboradores no se renderiza nada: ni etiqueta, ni contenedor, ni hueco. */}
+{
+    collaborators.length > 0 && (
+        <div class="flex items-center gap-3">
+            <span class="shrink-0 text-xs text-dim">colab:</span>
+            <ul class="flex items-center">
+                {visible.map((person) => (
+                    <li class="-ml-2 first:ml-0">
+                        <a
+                            href={person.profileUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={`${person.login} · ${person.contributions} commits`}
+                            class="block rounded-full ring-2 ring-surface transition hover:ring-accent"
+                        >
+                            <img
+                                src={person.avatarUrl}
+                                alt={person.login}
+                                width="28"
+                                height="28"
+                                loading="lazy"
+                                decoding="async"
+                                class="h-7 w-7 rounded-full bg-raised object-cover"
+                                data-avatar-fallback={person.login.charAt(0).toUpperCase()}
+                            />
+                        </a>
+                    </li>
+                ))}
+                {overflow > 0 && (
+                    <li class="-ml-2">
+                        <span
+                            class="flex h-7 w-7 items-center justify-center rounded-full bg-raised text-[10px] text-dim ring-2 ring-surface"
+                            title={`${overflow} colaboradores más`}
+                        >
+                            +{overflow}
+                        </span>
+                    </li>
+                )}
+            </ul>
+        </div>
+    )
+}
+
+<script>
+    // Si el avatar no carga, se sustituye por la inicial del login. El enlace
+    // al perfil sigue funcionando en cualquier caso.
+    document.querySelectorAll<HTMLImageElement>("img[data-avatar-fallback]").forEach((img) => {
+        img.addEventListener(
+            "error",
+            () => {
+                const initial = img.dataset.avatarFallback ?? "?";
+                const marker = document.createElement("span");
+                marker.className =
+                    "flex h-7 w-7 items-center justify-center rounded-full bg-raised text-[11px] text-dim";
+                marker.textContent = initial;
+                marker.setAttribute("aria-label", img.alt);
+                img.replaceWith(marker);
+            },
+            { once: true },
+        );
+    });
+</script>
