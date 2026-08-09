@@ -1,8 +1,10 @@
 ---
 import CardSkills from "./CardSkills.astro";
 import TerminalWindow from "./TerminalWindow.astro";
+import Claude from "./icons/Claude.astro";
 import Java from "./icons/Java.astro";
 import JavaScript from "./icons/JavaScript.astro";
+import OpenAI from "./icons/OpenAI.astro";
 import Python from "./icons/Python.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import TypeScript from "./icons/TypeScript.astro";
@@ -40,6 +42,18 @@ import TypeScript from "./icons/TypeScript.astro";
                     description="Experiencia en el desarrollo de aplicaciones web utilizando Tailwind CSS para crear interfaces modernas y responsivas."
                 >
                     <Tailwind class="h-12 w-12" />
+                </CardSkills>
+                <CardSkills
+                    title="Claude"
+                    description="Uso de Claude como asistente en el desarrollo: revisión y refactorización de código, exploración de tecnologías nuevas y apoyo al aprendizaje."
+                >
+                    <Claude class="h-12 w-12" />
+                </CardSkills>
+                <CardSkills
+                    title="ChatGPT && OpenAI"
+                    description="Uso de ChatGPT para consulta técnica, depuración de errores y contraste de soluciones durante el desarrollo."
+                >
+                    <OpenAI class="h-12 w-12" />
                 </CardSkills>
             </div>
         </TerminalWindow>
